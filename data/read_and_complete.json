@@ -1,0 +1,362 @@
+[
+  {
+    "id": "rc-001",
+    "type": "read_and_complete_multi_blank",
+    "difficulty": "medium",
+    "title": "A Gentle Touch, A Powerful Impact",
+    "text": "Maria gently placed her hand on the bird’s wing, feeling its delicate bones and soft feathers. Wi[BLANK][BLANK] a look o[BLANK] determination i[BLANK] her ey[BLANK][BLANK] , she sa[BLANK][BLANK] , “I wi[BLANK][BLANK] do every[BLANK][BLANK][BLANK][BLANK][BLANK] I can t[BLANK] help y[BLANK][BLANK] , little one .” And with that, she carefully began to treat the injured creature.",
+    "answers": ["t", "h", "f", "n", "e", "s", "i", "d", "l", "l", "t", "h", "i", "n", "g", "o", "o", "u"],
+    "hint": "Focus on common words and verb tenses."
+  },
+  {
+    "id": "rc-002",
+    "type": "read_and_complete_multi_blank",
+    "difficulty": "medium",
+    "title": "Bhutan’s Unique Sporting Tradition",
+    "text": "Bhutan, a small country nestled in the Himalayas, has a rich sporting culture that is deeply rooted in tradition. Archery i[BLANK] the nati[BLANK][BLANK][BLANK][BLANK][BLANK] sport of Bhutan, and compet[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] are he[BLANK][BLANK] throughout the cou[BLANK][BLANK][BLANK][BLANK][BLANK] . Other pop[BLANK][BLANK][BLANK][BLANK][BLANK] sports inc[BLANK][BLANK][BLANK][BLANK] basketball, foot[BLANK][BLANK][BLANK][BLANK] , and tradi[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] Bhutanese ga[BLANK][BLANK][BLANK][BLANK] such a[BLANK] digor and khuru. These are played throughout the year.",
+    "answers": ["s", "o", "n", "a", "l", "t", "i", "t", "o", "r", "s", "d", "l", "y", "t", "r", "y", "o", "u", "l", "a", "r", "u", "d", "e", "u", "d", "e", "s", "l", "u", "d", "o", "i", "a", "l", "o", "n", "i", "g", "a", "m", "e", "s"],
+    "hint": "Consider common words related to sports and countries."
+  },
+  {
+    "id": "rc-003",
+    "type": "read_and_complete_multi_blank",
+    "difficulty": "medium",
+    "title": "From Small Town to Big City",
+    "text": "Johnson was raised in a small town in Kansas. He atte[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] the lo[BLANK][BLANK][BLANK] high sch[BLANK][BLANK][BLANK] and th[BLANK][BLANK] went o[BLANK] to study business a[BLANK] a comm[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] college. In 2010, he mo[BLANK][BLANK][BLANK][BLANK] to New York City 4 to pur[BLANK][BLANK][BLANK] his car[BLANK][BLANK][BLANK][BLANK] . He sta[BLANK][BLANK][BLANK][BLANK] working i[BLANK] finance a[BLANK][BLANK] quickly climbed t[BLANK][BLANK] corporate lad[BLANK][BLANK][BLANK][BLANK][BLANK] . Today, he is a successful executive in one of the city’s top firms.",
+    "answers": ["n", "d", "e", "d", "e", "d", "c", "a", "l", "h", "o", "o", "l", "e", "n", "s", "t", "o", "m", "u", "n", "i", "t", "y", "m", "o", "v", "e", "d", "s", "u", "e", "e", "r", "e", "e", "r", "r", "t", "e", "d", "i", "n", "n", "d", "h", "e", "d", "d", "e", "r"],
+    "hint": "Think about education, career, and moving to a new city."
+  },
+  {
+    "id": "rc-004",
+    "type": "read_and_complete_multi_blank",
+    "difficulty": "medium",
+    "title": "A Moment of Calm",
+    "text": "The rain had finally stopped, leaving behind a fresh, clean scent in the air. I s[BLANK][BLANK] on t[BLANK][BLANK] porch, sip[BLANK][BLANK][BLANK][BLANK] my cof[BLANK][BLANK][BLANK][BLANK] and watc[BLANK][BLANK][BLANK][BLANK] the bi[BLANK][BLANK][BLANK] flit ab[BLANK][BLANK][BLANK][BLANK] in the garden. The sound of t[BLANK][BLANK] wind chimes w[BLANK][BLANK] soothing, a[BLANK][BLANK] I fe[BLANK][BLANK] a sense of peace wash ov[BLANK][BLANK] me. It was the perfect way to start the day.",
+    "answers": ["a", "t", "h", "e", "p", "p", "i", "n", "g", "f", "f", "e", "e", "h", "i", "n", "g", "r", "d", "s", "o", "u", "t", "e", "h", "e", "a", "s", "n", "d", "l", "t", "e", "r"],
+    "hint": "Focus on words describing relaxation and nature after rain."
+  },
+  {
+    "id": "rc-005",
+    "type": "read_and_complete_multi_blank",
+    "difficulty": "hard",
+    "title": "The Great Escape",
+    "text": "“Quick, we need to get out of here!” I whispered to my friend. We h[BLANK][BLANK] snuck in[BLANK][BLANK] the o[BLANK][BLANK][BLANK] abandoned man[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] , but n[BLANK][BLANK][BLANK] we co[BLANK][BLANK][BLANK] hear foot[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] echoing thr[BLANK][BLANK][BLANK][BLANK][BLANK] the halls. We r[BLANK][BLANK] down the sta[BLANK][BLANK][BLANK][BLANK][BLANK] and “out” and “the” front do[BLANK][BLANK] , not stop[BLANK][BLANK][BLANK][BLANK][BLANK] until w[BLANK] were sa[BLANK][BLANK] in the woods beh[BLANK][BLANK][BLANK] the ho[BLANK][BLANK][BLANK] . Our hearts were pounding, but we were free.",
+    "answers": ["a", "d", "t", "o", "l", "d", "d", "o", "n", "s", "i", "o", "w", "u", "l", "d", "s", "t", "e", "p", "s", "o", "u", "g", "h", "u", "n", "a", "i", "r", "s", "t", "a", "i", "r", "s", "o", "o", "r", "p", "p", "i", "n", "g", "e", "f", "e", "h", "i", "n", "d", "u", "s", "e"],
+    "hint": "Imagine a thrilling escape from an old house."
+  },
+  {
+    "id": "rc-006",
+    "type": "read_and_complete_multi_blank",
+    "difficulty": "medium",
+    "title": "The Diverse Habitats of Marine Life",
+    "text": "Marine creatures can be found in every ocean of the world. Some creat[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] thrive i[BLANK] the freezing wat[BLANK][BLANK][BLANK][BLANK] of t[BLANK][BLANK] Arctic, wh[BLANK][BLANK][BLANK] others prefer t[BLANK][BLANK] warm wat[BLANK][BLANK][BLANK][BLANK] of t[BLANK][BLANK] tropics. Marine li[BLANK][BLANK] can b[BLANK] found i[BLANK] coral re[BLANK][BLANK][BLANK] , kelp forests, deep s[BLANK][BLANK] trenches, a[BLANK][BLANK] even i[BLANK] hydrothermal ve[BLANK][BLANK][BLANK][BLANK] . The diversity of marine habitats is truly astonishing.",
+    "answers": ["u", "r", "e", "s", "t", "h", "n", "e", "r", "s", "e", "h", "e", "i", "l", "e", "h", "e", "a", "t", "e", "r", "s", "h", "e", "f", "e", "e", "s", "i", "n", "e", "e", "f", "n", "a", "n", "d", "n", "s"],
+    "hint": "Think about different water bodies and underwater features."
+  },
+  {
+    "id": "rc-007",
+    "type": "read_and_complete_multi_blank",
+    "difficulty": "hard",
+    "title": "The Hidden Gems of Nottingham",
+    "text": "Nottingham, a city steeped in history and legend, is home to many hidden gems waiting to be discovered. The ci[BLANK][BLANK] boasts sev[BLANK][BLANK][BLANK][BLANK][BLANK] par[BLANK][BLANK] and gar[BLANK][BLANK][BLANK][BLANK][BLANK] , including the Arboretum and t[BLANK][BLANK] Nottingham Castle Grounds. Nottingham is also kn[BLANK][BLANK][BLANK] for its vib[BLANK][BLANK][BLANK][BLANK][BLANK] arts sc[BLANK][BLANK][BLANK] , with ma[BLANK][BLANK] galleries a[BLANK] thea[BLANK][BLANK][BLANK][BLANK][BLANK] showc[BLANK][BLANK][BLANK][BLANK][BLANK] local tal[BLANK][BLANK][BLANK] . The city’s rich history can be explored through its many museums, including the Nottingham Castle Museum and Art Gallery.",
+    "answers": ["t", "y", "e", "r", "a", "l", "p", "k", "s", "e", "n", "s", "h", "e", "o", "w", "n", "r", "a", "n", "t", "t", "s", "e", "n", "e", "n", "d", "t", "e", "r", "s", "a", "s", "i", "n", "g", "e", "n", "t"],
+    "hint": "Focus on words related to city features, arts, and history."
+  },
+  {
+    "id": "rc-008",
+    "type": "read_and_complete_multi_blank",
+    "difficulty": "medium",
+    "title": "The Cultural Hub of San Francisco",
+    "text": "In addition to being a tech hub, San Francisco is also a vibrant center of culture and art. The ci[BLANK][BLANK] is ho[BLANK][BLANK] to many mus[BLANK][BLANK][BLANK][BLANK][BLANK] , galleries, and thea[BLANK][BLANK][BLANK][BLANK][BLANK] , as we[BLANK][BLANK] as a div[BLANK][BLANK][BLANK][BLANK][BLANK] array of resta[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] and shops. From the historic neighborhoods to the modern skyscrapers, San Francisco is a city that truly has something for everyone.",
+    "answers": ["t", "y", "m", "e", "e", "u", "m", "s", "e", "a", "t", "e", "r", "s", "l", "l", "e", "r", "s", "e", "a", "u", "r", "a", "n", "t", "s"],
+    "hint": "Think about cultural attractions and places to eat/shop in a city."
+  },
+  {
+    "id": "rc-009",
+    "type": "read_and_complete_multi_blank",
+    "difficulty": "medium",
+    "title": "From Barren Wasteland to Thriving Metropolis",
+    "text": "The name “Dubai” comes from the Arabic word “Daba,” which means “to creep.” This refers t[BLANK] the sl[BLANK][BLANK][BLANK] flow o[BLANK] the Dubai Creek, wh[BLANK][BLANK][BLANK][BLANK] was once t[BLANK][BLANK] only sou[BLANK][BLANK][BLANK][BLANK] of water in t[BLANK][BLANK] barren desert land[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] . Today, Dubai is a bustling city, known for its towering skyscrapers and luxurious lifestyle.",
+    "answers": ["o", "o", "w", "s", "f", "i", "c", "h", "e", "h", "e", "u", "r", "c", "e", "h", "e", "s", "c", "a", "p", "e"],
+    "hint": "Consider words related to geography and transformation."
+  },
+  {
+    "id": "rc-010",
+    "type": "read_and_complete_multi_blank",
+    "difficulty": "hard",
+    "title": "The Mystery of Black Holes",
+    "text": "Black holes are mysterious objects in space that have such a strong gravitational pull that nothing, not even light, can escape. Th[BLANK][BLANK] are for[BLANK][BLANK][BLANK][BLANK] when mas[BLANK][BLANK][BLANK][BLANK][BLANK] stars collapse i[BLANK] on thems[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] , creating a singu[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK]—a po[BLANK][BLANK][BLANK][BLANK] o[BLANK] infinite den[BLANK][BLANK][BLANK][BLANK][BLANK] . Black holes can be found at the center of most galaxies, including our own Milky Way.",
+    "answers": ["e", "y", "m", "e", "d", "e", "s", "s", "i", "v", "e", "n", "s", "e", "l", "v", "e", "s", "l", "a", "r", "i", "t", "y", "i", "n", "t", "e", "s", "f", "s", "i", "t", "y"],
+    "hint": "Think about concepts related to space, stars, and physics."
+  },
+  {
+    "id": "rc-011",
+    "type": "read_and_complete_multi_blank",
+    "difficulty": "hard",
+    "title": "Breathing New Life into the Old",
+    "text": "The old rocking chair sat in the corner, torn and frayed. But f[BLANK][BLANK] Emily, i[BLANK] wasn’t ju[BLANK][BLANK] a pi[BLANK][BLANK][BLANK] of furn[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] ; it w[BLANK][BLANK] a piece o[BLANK] her chil[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] . She gath[BLANK][BLANK][BLANK][BLANK][BLANK] her to[BLANK][BLANK][BLANK] and s[BLANK][BLANK] to wo[BLANK][BLANK] . Ho[BLANK][BLANK][BLANK] flew b[BLANK][BLANK] as she repl[BLANK][BLANK][BLANK][BLANK][BLANK] the fab[BLANK][BLANK] , sanded the wo[BLANK][BLANK] , and tightened the loose joi[BLANK][BLANK][BLANK][BLANK] . Finally, the ch[BLANK][BLANK][BLANK] was rest[BLANK][BLANK][BLANK][BLANK][BLANK] . Emily took a seat, closed her eyes and was once more with her family.",
+    "answers": ["o", "r", "t", "s", "t", "e", "c", "e", "i", "t", "u", "r", "e", "s", "a", "s", "f", "c", "h", "o", "o", "d", "e", "r", "e", "d", "o", "l", "s", "e", "t", "r", "k", "u", "r", "s", "y", "a", "d", "a", "c", "e", "d", "r", "i", "c", "o", "d", "s", "n", "t", "s", "a", "i", "r", "o", "r", "e", "d"],
+    "hint": "Follow the story of restoring an old chair, thinking about tools and actions."
+  },
+  {
+    "id": "rc-012",
+    "type": "read_and_complete_multi_blank",
+    "difficulty": "medium",
+    "title": "The Reunion of a Classic Rock Band",
+    "text": "The Eagles are an American rock band that formed in 1971. Th[BLANK][BLANK] broke u[BLANK] in 1980, b[BLANK][BLANK] reunited i[BLANK] 1994 a[BLANK][BLANK] have be[BLANK][BLANK] performing toge[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] ever si[BLANK][BLANK][BLANK] . The band currently consists of four members: Don Henley (vocals, drums), Joe Walsh (guitar, vocals), Timothy B. Schmit (bass, Sample Questions vocals), and Vince Gill (guitar, vocals).",
+    "answers": ["e", "y", "p", "u", "t", "n", "d", "e", "e", "r", "t", "h", "e", "r", "s", "i", "n", "c", "e"],
+    "hint": "Think about the journey of a band and its members."
+  },
+  {
+    "id": "rc-013",
+    "type": "read_and_complete_multi_blank",
+    "difficulty": "hard",
+    "title": "Setting Boundaries with Love",
+    "text": "As a manager, it’s important to set clear expectations for your employees while still maintaining a positive and supportive work environment. If y[BLANK][BLANK] find th[BLANK][BLANK] your te[BLANK][BLANK][BLANK] members a[BLANK][BLANK] taking adva[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] of yo[BLANK][BLANK] kindness, it m[BLANK][BLANK] be ti[BLANK][BLANK] to esta[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] some firmer bound[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] . Remember that it’s possible to be both assertive and compassionate in your leadership style.",
+    "answers": ["o", "u", "a", "t", "a", "m", "s", "r", "e", "e", "n", "t", "a", "g", "e", "s", "u", "r", "a", "y", "m", "e", "s", "b", "l", "i", "s", "h", "o", "u", "n", "d", "a", "r", "i", "e", "s"],
+    "hint": "Consider words related to management, teamwork, and setting limits."
+  },
+  {
+    "id": "rc-014",
+    "type": "read_and_complete_multi_blank",
+    "difficulty": "hard",
+    "title": "The Remarkable Life of Audrey Hepburn",
+    "text": "Audrey Hepburn was a British actress and humanitarian known for her elegant style and captivating performances. Bo[BLANK][BLANK] on May 4, 1929, s[BLANK][BLANK] rose t[BLANK] fame i[BLANK] the 1950s a[BLANK][BLANK] 60s wi[BLANK][BLANK] iconic ro[BLANK][BLANK][BLANK][BLANK] in fi[BLANK][BLANK][BLANK] like Breakfast at Tiffany’s a[BLANK][BLANK] My Fair Lady. Throu[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] her car[BLANK][BLANK][BLANK][BLANK] , she w[BLANK][BLANK] numerous awa[BLANK][BLANK][BLANK][BLANK][BLANK] and acco[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] . These included an Academy Award and a Presidential Medal of Freedom.",
+    "answers": ["r", "n", "h", "e", "o", "n", "n", "d", "t", "h", "l", "e", "s", "m", "s", "l", "m", "n", "d", "g", "h", "o", "u", "t", "e", "e", "r", "e", "e", "r", "a", "s", "r", "d", "s", "m", "p", "l", "i", "s", "h", "m", "e", "n", "t", "s"],
+    "hint": "Think about the life and achievements of a famous actress."
+  },
+  {
+    "id": "rc-015",
+    "type": "read_and_complete_multi_blank",
+    "difficulty": "medium",
+    "title": "Discovering the Cultural Treasures of Kyoto",
+    "text": "Kyoto is a city in Japan with a rich cultural heritage that spans over a thousand years. I[BLANK] was on[BLANK][BLANK] the cap[BLANK][BLANK][BLANK][BLANK][BLANK] of Japan a[BLANK][BLANK] is ho[BLANK][BLANK] to many hist[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] temples, gar[BLANK][BLANK][BLANK][BLANK][BLANK] , and pal[BLANK][BLANK][BLANK][BLANK] . The ci[BLANK][BLANK] is fam[BLANK][BLANK][BLANK][BLANK] for its tradi[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] arts and cra[BLANK][BLANK][BLANK] , incl[BLANK][BLANK][BLANK][BLANK][BLANK] pottery, text[BLANK][BLANK][BLANK][BLANK][BLANK] , and calligraphy. Visitors can explore the city’s many museums and galleries to learn more about its cultural history and traditions.",
+    "answers": ["t", "c", "e", "a", "p", "i", "t", "a", "l", "n", "d", "m", "e", "o", "r", "i", "c", "a", "l", "d", "e", "n", "s", "a", "c", "e", "s", "t", "y", "o", "u", "s", "n", "a", "l", "t", "i", "o", "n", "a", "l", "r", "t", "s", "u", "d", "i", "n", "g", "i", "l", "e", "s", "o"],
+    "hint": "Focus on words related to Japanese culture, history, and arts."
+  },
+  {
+    "id": "rc-016",
+    "type": "read_and_complete_multi_blank",
+    "difficulty": "hard",
+    "title": "A Historic Journey through the Panama Canal",
+    "text": "The Panama Canal is a man-made marvel that changed the course of maritime history. T[BLANK][BLANK] Canal was comp[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] in 1914 a[BLANK][BLANK] has si[BLANK][BLANK][BLANK][BLANK][BLANK] served a[BLANK] a vi[BLANK][BLANK][BLANK][BLANK] passageway f[BLANK][BLANK][BLANK] ships trav[BLANK][BLANK][BLANK][BLANK][BLANK] between t[BLANK][BLANK] Atlantic a[BLANK][BLANK] Pacific Oceans. The French fi[BLANK][BLANK][BLANK][BLANK] attempted t[BLANK] build t[BLANK][BLANK] canal i[BLANK] the la[BLANK][BLANK] 19th century, b[BLANK][BLANK] it w[BLANK][BLANK] ultimately comp[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] by t[BLANK][BLANK] United States. Today, the Canal is operated by the Panamanian government and generates significant revenue for the country.",
+    "answers": ["h", "e", "l", "e", "t", "e", "d", "d", "n", "d", "c", "e", "s", "e", "n", "s", "e", "a", "l", "i", "v", "a", "l", "f", "o", "r", "e", "l", "l", "i", "n", "g", "h", "e", "n", "d", "h", "e", "r", "s", "t", "o", "h", "e", "i", "n", "t", "e", "a", "s", "u", "l", "t", "i", "m", "a", "t", "e", "l", "y", "h", "e"],
+    "hint": "Think about the construction and purpose of the Panama Canal."
+  },
+  {
+    "id": "rc-017",
+    "type": "read_and_complete_multi_blank",
+    "difficulty": "hard",
+    "title": "The Historic Hampden Park",
+    "text": "Nestled in the city of Glasgow, Hampden Park stands as a legendary football stadium steeped in history. For ov[BLANK][BLANK] a cen[BLANK][BLANK][BLANK][BLANK][BLANK] , it h[BLANK][BLANK] served a[BLANK] the nati[BLANK][BLANK][BLANK][BLANK][BLANK] stadium o[BLANK] Scotland. In t[BLANK][BLANK] mid-20th century, the sta[BLANK][BLANK][BLANK][BLANK][BLANK] boasted a capa[BLANK][BLANK][BLANK][BLANK][BLANK] of ov[BLANK][BLANK] 150,000. Hampden Park h[BLANK][BLANK] played ho[BLANK][BLANK] to nume[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] prestigious spor[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] events, incl[BLANK][BLANK][BLANK][BLANK][BLANK] the FIFA World Cup qualifiers and t[BLANK][BLANK] European Cup fi[BLANK][BLANK][BLANK] . The stadium has also been a popular venue for major music concerts.",
+    "answers": ["e", "r", "t", "u", "r", "y", "a", "s", "n", "a", "l", "s", "i", "o", "h", "e", "d", "i", "u", "m", "c", "a", "c", "i", "t", "y", "e", "r", "a", "s", "n", "u", "m", "e", "r", "o", "u", "s", "t", "i", "n", "g", "g", "e", "v", "e", "n", "t", "s", "u", "d", "i", "n", "g", "h", "e", "n", "a", "l"],
+    "hint": "Think about a famous football stadium and its history."
+  },
+  {
+    "id": "rc-018",
+    "type": "read_and_complete_multi_blank",
+    "difficulty": "medium",
+    "title": "The Formative Years of Apple’s Co-Founder",
+    "text": "Steve Wozniak was born on August 11, 1950, in San Jose, California. His fat[BLANK][BLANK][BLANK][BLANK] , Francis Jacob “Jerry” Wozniak, w[BLANK][BLANK] an engi[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] at Lockheed Martin, a[BLANK][BLANK] his mot[BLANK][BLANK][BLANK][BLANK][BLANK] , Margaret Elaine, w[BLANK][BLANK] a home[BLANK][BLANK][BLANK][BLANK][BLANK] . Wozniak’s inte[BLANK][BLANK][BLANK][BLANK][BLANK] in elect[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] and engineering be[BLANK][BLANK][BLANK][BLANK] at an ea[BLANK][BLANK][BLANK] age. He went on to study electrical engineering and computer science at the University of California, Berkeley.",
+    "answers": ["h", "e", "r", "e", "a", "s", "n", "e", "e", "r", "d", "n", "d", "h", "e", "r", "m", "a", "k", "e", "r", "r", "e", "s", "t", "e", "l", "e", "c", "t", "r", "o", "n", "i", "c", "s", "g", "a", "n", "n", "e", "r", "l", "y"],
+    "hint": "Focus on words related to family, careers, and early interests."
+  },
+  {
+    "id": "rc-019",
+    "type": "read_and_complete_multi_blank",
+    "difficulty": "hard",
+    "title": "The Dream of a Sustainable Singapore",
+    "text": "The first city-state in the world to set the goal of becoming carbon-neutral, was the island nation of Singapore. I[BLANK] 2022, Singapore anno[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] its vis[BLANK][BLANK][BLANK][BLANK] of achi[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] net-zero emis[BLANK][BLANK][BLANK][BLANK][BLANK] by 2050. The stra[BLANK][BLANK][BLANK][BLANK][BLANK] aims to ach[BLANK][BLANK][BLANK][BLANK][BLANK] a sustainable soc[BLANK][BLANK][BLANK][BLANK][BLANK] by 2050, thr[BLANK][BLANK][BLANK][BLANK] the comb[BLANK][BLANK][BLANK][BLANK][BLANK] efforts of indu[BLANK][BLANK][BLANK][BLANK][BLANK] , government, and comm[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] . Singapore is setting a global example for sustainable urban development.",
+    "answers": ["n", "u", "n", "c", "e", "d", "e", "d", "i", "o", "n", "s", "e", "v", "i", "n", "g", "s", "s", "i", "o", "n", "s", "t", "r", "a", "t", "e", "g", "y", "i", "e", "v", "e", "o", "c", "i", "e", "t", "y", "o", "u", "g", "h", "i", "n", "e", "d", "d", "u", "s", "t", "r", "y", "u", "n", "i", "t", "y"],
+    "hint": "Think about concepts of sustainability, climate goals, and societal efforts."
+  },
+  {
+    "id": "rc-020",
+    "type": "read_and_complete_multi_blank",
+    "difficulty": "hard",
+    "title": "The Recording History of Beethoven’s Symphonies",
+    "text": "The first complete recording of a Beethoven symphony was made by the Odeon Orchestra under the direction of Friedrich Kark in 1910. The recor[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] were ma[BLANK][BLANK] using acoustic techn[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] , which w[BLANK][BLANK] the stan[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] at the ti[BLANK][BLANK] . In cont[BLANK][BLANK][BLANK][BLANK] to la[BLANK][BLANK][BLANK][BLANK][BLANK] recordings, Kark’s 5interpretations we[BLANK][BLANK] relatively fa[BLANK][BLANK] and light. The first stereo recordings of the symphonies were made by the Berlin Philharmonic under the direction of Herbert von Karajan in 1961 and 1962.",
+    "answers": ["d", "i", "n", "g", "s", "e", "r", "s", "d", "e", "o", "l", "o", "g", "i", "e", "s", "a", "s", "d", "a", "r", "d", "d", "i", "m", "e", "r", "a", "s", "t", "e", "r", "e", "s", "r", "e", "e", "r", "e", "l", "s", "t"],
+    "hint": "Focus on terms related to music recording and historical methods."
+  },
+  {
+    "id": "rc-021",
+    "type": "read_and_complete_multi_blank",
+    "difficulty": "hard",
+    "title": "The Founding Members of the United Nations",
+    "text": "The United Nations was founded in 1945 by 51 countries. These incl[BLANK][BLANK][BLANK][BLANK][BLANK] the United States, t[BLANK][BLANK] Soviet Union, t[BLANK][BLANK] United Kingdom, China, a[BLANK][BLANK] France. T[BLANK][BLANK] of t[BLANK][BLANK] UN’s ma[BLANK][BLANK] governing bod[BLANK][BLANK][BLANK] are t[BLANK][BLANK] General Assembly a[BLANK][BLANK] the Security Council. The Security Council h[BLANK][BLANK] five perm[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] members a[BLANK][BLANK] ten non-permanent mem[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] that are ele[BLANK][BLANK][BLANK][BLANK] by t[BLANK][BLANK] General Assembly f[BLANK][BLANK] a two-year te[BLANK][BLANK] . The Security Council’s goal is to maintain international peace and security.",
+    "answers": ["u", "d", "e", "d", "e", "h", "e", "h", "e", "n", "d", "w", "o", "h", "e", "i", "n", "o", "d", "i", "e", "s", "h", "e", "n", "d", "a", "s", "a", "n", "e", "n", "t", "n", "d", "e", "r", "s", "b", "e", "r", "s", "c", "t", "e", "d", "h", "e", "o", "r", "r", "m"],
+    "hint": "Think about the structure and history of the United Nations."
+  },
+  {
+    "id": "rc-022",
+    "type": "read_and_complete_multi_blank",
+    "difficulty": "medium",
+    "title": "The Development of Modern Medicine",
+    "text": "The field of modern medicine has undergone significant advancements over the past few centuries. The disc[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] of penicillin i[BLANK] 1928 b[BLANK] Alexander Fleming revolutionized t[BLANK][BLANK] treatment o[BLANK] bacterial infec[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] , while t[BLANK][BLANK] development o[BLANK] vaccines h[BLANK][BLANK] led to t[BLANK][BLANK] eradication o[BLANK] diseases su[BLANK][BLANK] as smallpox a[BLANK][BLANK] polio. These innovations have greatly improved the health of mankind.",
+    "answers": ["o", "v", "e", "r", "y", "o", "f", "p", "e", "n", "y", "h", "e", "f", "t", "i", "o", "n", "s", "h", "e", "f", "a", "s", "h", "e", "f", "c", "h", "a", "n", "d"],
+    "hint": "Focus on key medical discoveries and their impact on health."
+  },
+  {
+    "id": "rc-023",
+    "type": "read_and_complete_multi_blank",
+    "difficulty": "hard",
+    "title": "The First Famous Video Game",
+    "text": "In the world of video games, Pong might seem like a relic from a bygone era. B[BLANK][BLANK] this sim[BLANK][BLANK][BLANK][BLANK] game of table ten[BLANK][BLANK][BLANK][BLANK] holds a signi[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] place i[BLANK] history. Deve[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] in the ea[BLANK][BLANK][BLANK] 1970s, Pong w[BLANK][BLANK] the world’s fi[BLANK][BLANK][BLANK] commercially succe[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] computer ga[BLANK][BLANK] . It captivated pla[BLANK][BLANK][BLANK][BLANK] with its addi[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] gameplay, des[BLANK][BLANK][BLANK][BLANK] having ba[BLANK][BLANK][BLANK][BLANK] graphics. Pong proved that the joy of gaming could be born from simple concepts.",
+    "answers": ["u", "t", "p", "l", "e", "n", "n", "i", "s", "f", "i", "c", "a", "n", "t", "l", "y", "v", "e", "l", "o", "p", "e", "d", "r", "l", "y", "a", "s", "r", "s", "t", "s", "s", "f", "u", "l", "a", "m", "e", "y", "e", "r", "s", "c", "t", "i", "v", "e", "e", "s", "p", "i", "t", "e", "s", "i", "c"],
+    "hint": "Think about the history of early video games and their characteristics."
+  },
+  {
+    "id": "rc-024",
+    "type": "read_and_complete_multi_blank",
+    "difficulty": "hard",
+    "title": "A Roaring Innovation",
+    "text": "The Deltic was a powerful and innovative locomotive. Th[BLANK][BLANK][BLANK] engines signif[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] improved the sp[BLANK][BLANK][BLANK][BLANK] and effic[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] of express pass[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] trains i[BLANK] the UK from the ea[BLANK][BLANK][BLANK] 1960’s. Alth[BLANK][BLANK][BLANK][BLANK][BLANK] they were expe[BLANK][BLANK][BLANK][BLANK][BLANK] to revolutionize tr[BLANK][BLANK][BLANK][BLANK] travel in t[BLANK][BLANK] UK, th[BLANK][BLANK] did n[BLANK][BLANK] transpire. The fl[BLANK][BLANK][BLANK][BLANK] was repl[BLANK][BLANK][BLANK][BLANK][BLANK] after le[BLANK][BLANK][BLANK] than 30 years, as techn[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] moved tow[BLANK][BLANK][BLANK][BLANK][BLANK] electrified tra[BLANK][BLANK][BLANK] . However, they did influence the design of future locomotives and are fondly remembered today.",
+    "answers": ["e", "s", "e", "i", "c", "a", "n", "t", "l", "y", "e", "d", "e", "d", "e", "d", "e", "s", "p", "e", "e", "d", "i", "e", "n", "c", "y", "e", "n", "g", "e", "r", "s", "n", "r", "l", "y", "o", "u", "g", "h", "t", "e", "c", "t", "e", "d", "a", "i", "n", "h", "e", "e", "y", "o", "t", "e", "e", "t", "e", "d", "s", "s", "t", "h", "r", "o", "u", "g", "h", "e", "c", "h", "n", "o", "l", "o", "g", "y", "a", "r", "d", "s", "r", "a", "i", "n"],
+    "hint": "Think about railway history, locomotives, and technological changes."
+  },
+  {
+    "id": "rc-025",
+    "type": "read_and_complete_multi_blank",
+    "difficulty": "medium",
+    "title": "Tiny Books with Big Journeys",
+    "text": "Passports are more than just travel documents. Th[BLANK][BLANK] are gate[BLANK][BLANK][BLANK][BLANK][BLANK] to adve[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] and explo[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] . Tucked wit[BLANK][BLANK][BLANK] their pa[BLANK][BLANK][BLANK][BLANK] lie t[BLANK][BLANK] stamps and vi[BLANK][BLANK][BLANK] that te[BLANK][BLANK] the ta[BLANK][BLANK] of a li[BLANK][BLANK] well-traveled. Each passport holds stories of faraway lands, diverse cultures, and unforgettable experiences.",
+    "answers": ["e", "y", "w", "a", "y", "s", "d", "o", "o", "r", "v", "e", "n", "t", "u", "r", "e", "s", "r", "a", "t", "i", "o", "n", "s", "h", "i", "n", "s", "g", "e", "s", "h", "e", "s", "a", "l", "e", "f"],
+    "hint": "Focus on words related to travel, documents, and journeys."
+  },
+  {
+    "id": "rc-026",
+    "type": "read_and_complete_multi_blank",
+    "difficulty": "medium",
+    "title": "The Gentle Glow of Candlelight",
+    "text": "Candles offer more than just illumination. They ca[BLANK][BLANK] a wa[BLANK][BLANK] and inviting ambiance, crea[BLANK][BLANK][BLANK][BLANK][BLANK] a se[BLANK][BLANK][BLANK] of pe[BLANK][BLANK][BLANK][BLANK] and tranquility. T[BLANK][BLANK] flickering fl[BLANK][BLANK][BLANK] draws u[BLANK] in, inviting mom[BLANK][BLANK][BLANK][BLANK][BLANK] of relaxation and refle[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] . The gentle glow of candlelight adds a touch of magic to any space.",
+    "answers": ["s", "t", "r", "m", "t", "i", "n", "g", "a", "s", "e", "n", "s", "e", "a", "c", "e", "h", "e", "a", "m", "e", "s", "u", "o", "m", "e", "n", "t", "s", "c", "t", "i", "o", "n"],
+    "hint": "Think about the sensory experience of candlelight."
+  },
+  {
+    "id": "rc-027",
+    "type": "read_and_complete_multi_blank",
+    "difficulty": "medium",
+    "title": "Man’s Loyal Companion",
+    "text": "Dogs have earned the title of “man’s best friend” for a reason. Th[BLANK][BLANK][BLANK] furry compa[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] offer unwavering loy[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] , unconditional lo[BLANK][BLANK] , and end[BLANK][BLANK][BLANK][BLANK] entertainment. From pla[BLANK][BLANK][BLANK][BLANK][BLANK] pups to gentle gia[BLANK][BLANK][BLANK][BLANK] , dogs co[BLANK][BLANK] in all sha[BLANK][BLANK][BLANK][BLANK] and si[BLANK][BLANK][BLANK] , but th[BLANK][BLANK] all ha[BLANK][BLANK] one th[BLANK][BLANK][BLANK] in com[BLANK][BLANK] . That is the ability to enrich our lives with their companionship and devotion.",
+    "answers": ["e", "s", "e", "n", "i", "o", "n", "s", "i", "o", "n", "a", "l", "t", "y", "v", "e", "e", "l", "e", "s", "s", "y", "i", "n", "g", "n", "t", "s", "m", "e", "s", "p", "e", "s", "a", "e", "p", "e", "s", "z", "e", "y", "h", "e", "v", "e", "i", "n", "g", "o", "n"],
+    "hint": "Focus on words describing dogs, their characteristics, and their relationship with humans."
+  },
+  {
+    "id": "rc-028",
+    "type": "read_and_complete_multi_blank",
+    "difficulty": "medium",
+    "title": "Capturing Memories in a Click",
+    "text": "Photography is the art of capturing time in a single frame. A well-composed photo[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] can te[BLANK][BLANK] a st[BLANK][BLANK][BLANK] , evoke a[BLANK][BLANK] emotion, or tran[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] us to ano[BLANK][BLANK][BLANK][BLANK][BLANK] place and ti[BLANK][BLANK] . Photography all[BLANK][BLANK][BLANK][BLANK][BLANK] us to fre[BLANK][BLANK][BLANK][BLANK][BLANK] fleeting mom[BLANK][BLANK][BLANK][BLANK][BLANK] and pres[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] cherished memo[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] forever. This is true of the first grainy images captured on film and the high-resolution pictures of today’s digital cameras.",
+    "answers": ["g", "r", "a", "p", "h", "y", "e", "l", "l", "o", "r", "y", "n", "n", "s", "p", "o", "r", "t", "h", "e", "r", "m", "e", "o", "w", "s", "e", "z", "e", "m", "e", "n", "t", "s", "e", "r", "v", "e", "m", "o", "r", "i", "e", "s"],
+    "hint": "Think about photography, memories, and emotions."
+  },
+  {
+    "id": "rc-029",
+    "type": "read_and_complete_multi_blank",
+    "difficulty": "medium",
+    "title": "Online Meetings: The New Face-to-Face",
+    "text": "The rise of online meeting platforms has transformed communication in the digital age. Go[BLANK][BLANK] are the da[BLANK][BLANK] of expe[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] travel and inconv[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] scheduling; now, vi[BLANK][BLANK][BLANK][BLANK] conferencing all[BLANK][BLANK][BLANK][BLANK] people to con[BLANK][BLANK][BLANK][BLANK] face-to-face fr[BLANK][BLANK][BLANK] anywhere i[BLANK] the wo[BLANK][BLANK][BLANK] . Onl[BLANK][BLANK] meetings ha[BLANK][BLANK] become an esse[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] tool f[BLANK][BLANK][BLANK] collaboration. They foster communication and connection across borders and time zones.",
+    "answers": ["n", "e", "y", "s", "n", "s", "i", "v", "e", "n", "i", "e", "n", "t", "i", "o", "u", "s", "d", "e", "o", "w", "s", "o", "w", "s", "n", "n", "e", "c", "t", "r", "o", "m", "n", "r", "l", "i", "n", "e", "v", "e", "n", "t", "i", "a", "l", "o", "r"],
+    "hint": "Focus on terms related to online communication and travel."
+  },
+  {
+    "id": "rc-030",
+    "type": "read_and_complete_multi_blank",
+    "difficulty": "medium",
+    "title": "A Simple Step Towards a Healthier You",
+    "text": "Jogging is a simple yet powerful exercise that offers a multitude of benefits for both body and mind. T[BLANK][BLANK] rhythmic pounding o[BLANK] feet aga[BLANK][BLANK][BLANK][BLANK] pavement prov[BLANK][BLANK][BLANK][BLANK][BLANK] a fo[BLANK][BLANK] of gen[BLANK][BLANK][BLANK][BLANK] stress rel[BLANK][BLANK][BLANK][BLANK][BLANK] , while t[BLANK][BLANK] increased he[BLANK][BLANK][BLANK][BLANK][BLANK] rate stren[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] the cardiovascular sys[BLANK][BLANK][BLANK] . Jogging is an accessible and effective way to improve overall health and well-being.",
+    "answers": ["h", "e", "f", "i", "n", "s", "t", "e", "s", "e", "s", "r", "m", "t", "l", "e", "e", "f", "i", "e", "h", "e", "a", "r", "t", "r", "e", "n", "g", "t", "h", "e", "n", "s", "t", "e", "m"],
+    "hint": "Think about the physical and mental benefits of jogging."
+  },
+  {
+    "id": "rc-031",
+    "type": "read_and_complete_multi_blank",
+    "difficulty": "hard",
+    "title": "The Race to the Stars",
+    "text": "The Space Race was a period of intense competition between the United States and the Soviet Union. It be[BLANK][BLANK][BLANK][BLANK] with t[BLANK][BLANK] launch o[BLANK] Sputnik 1, the fi[BLANK][BLANK][BLANK] artificial sate[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] , by t[BLANK][BLANK] Soviet Union i[BLANK] 1957, and en[BLANK][BLANK][BLANK] with the hist[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] moon lan[BLANK][BLANK][BLANK][BLANK][BLANK] by Apollo 11 i[BLANK] 1969. Throu[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] this per[BLANK][BLANK][BLANK] , both nat[BLANK][BLANK][BLANK][BLANK][BLANK] pushed the bound[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] of techn[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] . The Space Race captured the imagination of the world and led to scientific advancements that benefit us today.",
+    "answers": ["g", "a", "n", "s", "h", "e", "f", "r", "s", "t", "l", "l", "i", "t", "e", "h", "e", "n", "d", "e", "d", "o", "r", "i", "c", "l", "a", "n", "d", "i", "n", "g", "n", "g", "h", "o", "u", "g", "h", "t", "i", "o", "d", "t", "i", "o", "n", "s", "a", "r", "i", "e", "s", "t", "e", "c", "h", "n", "o", "l", "o", "g", "y"],
+    "hint": "Focus on vocabulary related to space exploration and historical events."
+  },
+  {
+    "id": "rc-032",
+    "type": "read_and_complete_multi_blank",
+    "difficulty": "hard",
+    "title": "From Humble Beginnings to Heavyweight Champion",
+    "text": "Jack Johnson defied racial barriers to become the first black heavyweight boxing champion of the world in 1908. H[BLANK][BLANK] unorthodox figh[BLANK][BLANK][BLANK][BLANK] style a[BLANK][BLANK] flamboyant perso[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] made h[BLANK][BLANK] a controversial fig[BLANK][BLANK][BLANK][BLANK] . His undeniable tal[BLANK][BLANK][BLANK][BLANK] and domi[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] in the ri[BLANK][BLANK] could n[BLANK][BLANK] be den[BLANK][BLANK][BLANK] . Johnson helped pave the way for future generations of black boxers.",
+    "answers": ["i", "s", "t", "i", "n", "g", "n", "d", "n", "a", "l", "i", "t", "y", "m", "a", "d", "e", "i", "g", "u", "r", "e", "e", "n", "t", "i", "o", "n", "n", "a", "c", "e", "d", "i", "e", "d"],
+    "hint": "Think about boxing, champions, and overcoming challenges."
+  },
+  {
+    "id": "rc-033",
+    "type": "read_and_complete_multi_blank",
+    "difficulty": "hard",
+    "title": "The Life and Legacy of Diego Maradona",
+    "text": "Diego Maradona, the Argentine football legend, was a player with unmatched skill and a life filled with both brilliance and controversy. His dazz[BLANK][BLANK][BLANK][BLANK] footwork and abi[BLANK][BLANK][BLANK][BLANK] to con[BLANK][BLANK][BLANK][BLANK] the ga[BLANK][BLANK] made h[BLANK][BLANK] a magician o[BLANK] the fi[BLANK][BLANK][BLANK] , leading Argentina to vic[BLANK][BLANK][BLANK][BLANK][BLANK] in t[BLANK][BLANK] 1986 World Cup. However, his pers[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] struggles and bat[BLANK][BLANK][BLANK][BLANK] with addi[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] cast a sha[BLANK][BLANK][BLANK] over his car[BLANK][BLANK][BLANK][BLANK] . Despite these troubles, Maradona remains an iconic figure in Argentina and a legend in the world of football.",
+    "answers": ["l", "i", "n", "g", "l", "i", "t", "y", "t", "r", "o", "l", "m", "e", "d", "i", "n", "f", "i", "e", "l", "d", "t", "o", "r", "y", "h", "e", "o", "n", "a", "l", "l", "e", "s", "t", "l", "e", "d", "i", "c", "t", "i", "o", "n", "s", "d", "o", "w", "c", "a", "r", "e", "e", "r"],
+    "hint": "Focus on vocabulary related to football, legends, and personal challenges."
+  },
+  {
+    "id": "rc-034",
+    "type": "read_and_complete_multi_blank",
+    "difficulty": "hard",
+    "title": "The Rise and Fall of the MP3",
+    "text": "The MP3 revolutionized the way we listen to music. Th[BLANK][BLANK][BLANK] compressed au[BLANK][BLANK][BLANK][BLANK] format all[BLANK][BLANK][BLANK][BLANK] for t[BLANK][BLANK] storage o[BLANK] thousands o[BLANK] songs o[BLANK] a sin[BLANK][BLANK][BLANK][BLANK] device, mak[BLANK][BLANK][BLANK] it poss[BLANK][BLANK][BLANK][BLANK][BLANK] to carry yo[BLANK][BLANK] entire mu[BLANK][BLANK][BLANK][BLANK][BLANK] library i[BLANK] your poc[BLANK][BLANK][BLANK][BLANK] . MP3 pla[BLANK][BLANK][BLANK][BLANK] quickly bec[BLANK][BLANK][BLANK] ubiquitous, and mu[BLANK][BLANK][BLANK][BLANK] piracy thrived a[BLANK] the for[BLANK][BLANK][BLANK][BLANK][BLANK] made it ea[BLANK][BLANK] to sh[BLANK][BLANK] digital fi[BLANK][BLANK] . However, the rise of streaming services led to the decline of the MP3 as the dominant format for music consumption.",
+    "answers": ["i", "s", "e", "d", "i", "o", "s", "w", "e", "d", "h", "e", "f", "f", "f", "g", "l", "e", "i", "n", "g", "s", "i", "b", "l", "e", "u", "r", "s", "i", "c", "a", "l", "n", "c", "k", "e", "t", "y", "e", "r", "s", "a", "m", "e", "s", "i", "c", "r", "m", "a", "t", "e", "s", "y", "a", "r", "e", "l", "e", "s"],
+    "hint": "Think about the MP3 format, music storage, and its impact."
+  },
+  {
+    "id": "rc-035",
+    "type": "read_and_complete_multi_blank",
+    "difficulty": "medium",
+    "title": "A Breath of Fresh Air",
+    "text": "A balcony isn’t just a piece of architecture. A bal[BLANK][BLANK][BLANK][BLANK][BLANK] is a[BLANK] invitation to con[BLANK][BLANK][BLANK][BLANK] with the outd[BLANK][BLANK][BLANK][BLANK][BLANK] . This sm[BLANK][BLANK][BLANK][BLANK] platform off[BLANK][BLANK][BLANK] a personal sp[BLANK][BLANK][BLANK][BLANK] to step out[BLANK][BLANK][BLANK][BLANK][BLANK] , breathe in the fr[BLANK][BLANK][BLANK] air, and soak u[BLANK] the sig[BLANK][BLANK][BLANK][BLANK] and sou[BLANK][BLANK][BLANK][BLANK] of the surrounding envir[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] . Balconies provide a valuable extension of living space and a chance to commune with the world outside.",
+    "answers": ["c", "o", "n", "y", "y", "n", "n", "e", "c", "t", "o", "o", "r", "s", "a", "l", "l", "f", "e", "r", "s", "a", "c", "e", "s", "i", "d", "e", "s", "h", "f", "r", "e", "s", "n", "g", "h", "t", "s", "n", "d", "s", "o", "u", "n", "d", "s", "n", "m", "e", "n", "t"],
+    "hint": "Focus on words related to balconies, fresh air, and outdoor sensory experiences."
+  },
+  {
+    "id": "rc-036",
+    "type": "read_and_complete_multi_blank",
+    "difficulty": "hard",
+    "title": "The History of English Language Teaching",
+    "text": "Early methods of teaching English focused on memorization of grammar rules and vocabulary lists. The 19th cen[BLANK][BLANK][BLANK][BLANK][BLANK] saw a[BLANK] emphasis o[BLANK] conversation a[BLANK][BLANK] practical lang[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] skills. T[BLANK][BLANK] 20th century witn[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] the ri[BLANK][BLANK] of inno[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] methods li[BLANK][BLANK] the Audiolingual Method, wh[BLANK][BLANK][BLANK] focused o[BLANK] mimicking nat[BLANK][BLANK][BLANK][BLANK][BLANK] speakers, a[BLANK][BLANK] the Communicative Approach, wh[BLANK][BLANK][BLANK] prioritized re[BLANK][BLANK][BLANK] world language u[BLANK][BLANK] . Today, English language teaching continues to evolve, using technology to make learning more accessible.",
+    "answers": ["t", "u", "r", "y", "e", "n", "o", "n", "d", "u", "a", "g", "e", "h", "e", "s", "s", "e", "d", "r", "s", "e", "i", "s", "e", "v", "a", "t", "i", "v", "e", "k", "e", "i", "c", "h", "n", "i", "v", "e", "a", "s", "r", "e", "a", "l", "u", "s", "e"],
+    "hint": "Think about different approaches and changes in language teaching over time."
+  },
+  {
+    "id": "rc-037",
+    "type": "read_and_complete_multi_blank",
+    "difficulty": "hard",
+    "title": "Conquering the Continent",
+    "text": "The Trans-Siberian Railway, a titan of steel tracks, wasn’t built overnight. Th[BLANK][BLANK][BLANK] monumental fe[BLANK][BLANK] of engin[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] began i[BLANK] the la[BLANK][BLANK] 19th cen[BLANK][BLANK][BLANK][BLANK][BLANK] , driven b[BLANK] a des[BLANK][BLANK][BLANK] to con[BLANK][BLANK][BLANK][BLANK] the va[BLANK][BLANK][BLANK] expanse o[BLANK] Russia. Stretching thou[BLANK][BLANK][BLANK][BLANK][BLANK] of mi[BLANK][BLANK][BLANK] from Moscow t[BLANK] Vladivostok, the rai[BLANK][BLANK][BLANK][BLANK][BLANK] conquered moun[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] , traversed fro[BLANK][BLANK][BLANK][BLANK][BLANK] plains, a[BLANK][BLANK] bridged mighty riv[BLANK][BLANK][BLANK] . Its construction opened up trade routes, forever altering the landscape of Asia.",
+    "answers": ["i", "s", "e", "a", "t", "e", "e", "r", "i", "n", "g", "n", "d", "s", "t", "e", "n", "t", "u", "r", "y", "y", "i", "r", "e", "o", "c", "u", "e", "r", "s", "t", "e", "a", "s", "n", "d", "u", "s", "a", "n", "d", "s", "l", "e", "s", "o", "a", "y", "l", "w", "a", "y", "t", "a", "i", "n", "s", "t", "e", "n", "d", "n", "d", "e", "r", "s"],
+    "hint": "Think about the Trans-Siberian Railway, its construction, and geographical features."
+  },
+  {
+    "id": "rc-038",
+    "type": "read_and_complete_multi_blank",
+    "difficulty": "hard",
+    "title": "Tin Lizzie Takes America for a Ride",
+    "text": "In the early 20th century, the automobile industry was a luxury reserved for the wealthy. Then ca[BLANK][BLANK] Henry Ford a[BLANK][BLANK] his revolu[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] Model T. Th[BLANK][BLANK][BLANK] simple, affor[BLANK][BLANK][BLANK][BLANK][BLANK] car, nick[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] “Tin Lizzie,” was bu[BLANK][BLANK][BLANK] on a[BLANK] assembly li[BLANK][BLANK] , making produ[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] faster and che[BLANK][BLANK][BLANK] . Suddenly, car owne[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] wasn’t ju[BLANK][BLANK] a dr[BLANK][BLANK][BLANK] – it w[BLANK][BLANK] a reality f[BLANK][BLANK][BLANK] the ave[BLANK][BLANK][BLANK][BLANK] American. The Model T transformed transportation, sparked a love affair with the automobile, and paved the way for a more mobile society.",
+    "answers": ["m", "e", "n", "d", "t", "i", "o", "n", "a", "r", "y", "i", "s", "h", "e", "s", "d", "a", "b", "l", "e", "n", "a", "m", "e", "d", "i", "l", "t", "n", "e", "u", "c", "t", "i", "o", "n", "e", "a", "p", "e", "r", "s", "h", "i", "p", "s", "s", "t", "e", "a", "m", "a", "s", "o", "r", "e", "a", "g", "e"],
+    "hint": "Think about early automobiles, Henry Ford, and mass production."
+  },
+  {
+    "id": "rc-039",
+    "type": "read_and_complete_multi_blank",
+    "difficulty": "hard",
+    "title": "A Dream Takes Flight",
+    "text": "Martin Luther King Jr. wasn’t just a civil rights leader; he was a beacon of hope. Born in[BLANK][BLANK] a segre[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] America, he dedi[BLANK][BLANK][BLANK][BLANK][BLANK] his li[BLANK][BLANK] to figh[BLANK][BLANK][BLANK][BLANK] for rac[BLANK][BLANK][BLANK][BLANK] equality. King’s powerful spee[BLANK][BLANK][BLANK][BLANK][BLANK] , imbued wi[BLANK][BLANK] eloquence a[BLANK][BLANK] fueled b[BLANK] a dr[BLANK][BLANK][BLANK] of justice, insp[BLANK][BLANK][BLANK][BLANK][BLANK] millions. He champ[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] nonviolent resis[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] , organizing mar[BLANK][BLANK][BLANK][BLANK][BLANK] and protests that chall[BLANK][BLANK][BLANK][BLANK][BLANK] discriminatory la[BLANK][BLANK] and practices. Through his commitment and courage, King helped lay the foundations for a more equitable America.",
+    "answers": ["t", "o", "g", "a", "t", "e", "d", "c", "a", "t", "e", "d", "f", "e", "i", "n", "g", "h", "t", "i", "n", "g", "a", "c", "i", "a", "l", "c", "h", "e", "s", "t", "h", "l", "e", "n", "d", "y", "e", "a", "m", "i", "r", "e", "d", "i", "o", "n", "e", "d", "r", "e", "s", "t", "a", "n", "c", "e", "c", "h", "e", "s", "g", "e", "d", "w", "s"],
+    "hint": "Focus on vocabulary related to civil rights, leaders, and social change."
+  },
+  {
+    "id": "rc-040",
+    "type": "read_and_complete_multi_blank",
+    "difficulty": "medium",
+    "title": "The World’s Favorite Morning Beverage",
+    "text": "Coffee has a fascinating history. Leg[BLANK][BLANK][BLANK][BLANK] has i[BLANK] that i[BLANK][BLANK] energizing prope[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] were fi[BLANK][BLANK][BLANK] discovered b[BLANK][BLANK] Ethiopian goat her[BLANK][BLANK][BLANK][BLANK][BLANK] who not[BLANK][BLANK][BLANK][BLANK][BLANK] their ani[BLANK][BLANK][BLANK][BLANK] becoming live[BLANK][BLANK][BLANK][BLANK] after eat[BLANK][BLANK][BLANK] the be[BLANK][BLANK][BLANK][BLANK] from a cer[BLANK][BLANK][BLANK][BLANK][BLANK] tree. Over cent[BLANK][BLANK][BLANK][BLANK][BLANK] , coffee cultivation spr[BLANK][BLANK][BLANK][BLANK] from Africa to t[BLANK][BLANK] Middle East and event[BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK][BLANK] across the gl[BLANK][BLANK][BLANK][BLANK] . From a simple bean to a global phenomenon, coffee has become a cornerstone of many cultures.",
+    "answers": ["e", "n", "d", "t", "t", "t", "s", "r", "t", "i", "e", "s", "r", "s", "t", "y", "b", "e", "r", "d", "e", "r", "s", "i", "c", "e", "d", "a", "n", "i", "m", "a", "l", "s", "v", "e", "l", "i", "e", "g", "b", "e", "a", "n", "s", "t", "a", "i", "n", "r", "i", "e", "s", "s", "e", "a", "d", "e", "h", "e", "u", "a", "l", "l", "y", "o", "b", "e", "e"],
+    "hint": "Think about the origin and history of coffee."
+  }
+]
