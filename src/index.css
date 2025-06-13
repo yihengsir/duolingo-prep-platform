@@ -1,18 +1,40 @@
+/* src/index.css */
+
+/* 必须添加这三行，它们是导入 Tailwind CSS 核心样式所必需的 */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 以下是你的项目可能需要的其他全局或基础样式 */
+/* 这些样式应该尽量保持精简，避免与 Tailwind 的类冲突 */
+
+/* :root 伪类用于定义全局 CSS 变量，也可以设置基础字体 */
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* 统一字体为 Inter，如果系统不支持则使用备用字体 */
+  font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5; /* 行高 */
+  font-weight: 400; /* 字体粗细 */
 
+  /* color-scheme 和 color/background-color 通常由 Tailwind 类在组件中设置 */
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* color: rgba(255, 255, 255, 0.87); */
+  /* background-color: #242424; */
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-synthesis: none; /* 禁用字体合成 */
+  text-rendering: optimizeLegibility; /* 优化文本渲染，提高可读性 */
+  -webkit-font-smoothing: antialiased; /* 针对 Webkit 浏览器（如 Chrome, Safari）的字体平滑 */
+  -moz-osx-font-smoothing: grayscale; /* 针对 Firefox 的字体平滑 */
 }
 
+/* body 标签通常用于设置页面的整体布局和最小高度 */
+body {
+  margin: 0; /* 移除默认外边距 */
+  min-width: 320px; /* 最小宽度，防止在小屏幕上内容溢出 */
+  min-height: 100vh; /* 确保 body 至少占据视口的全高 */
+  /* background-color: #f3f4f6; 这应该由 App.jsx 最外层 div 的 Tailwind 类 bg-gray-100 来设置 */
+}
+
+/* 链接的默认样式，也可以通过 Tailwind 类覆盖 */
 a {
   font-weight: 500;
   color: #646cff;
@@ -22,20 +44,13 @@ a:hover {
   color: #535bf2;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
+/* H1 和 Button 的默认样式通常会被 Tailwind 重置或覆盖，这里可以注释掉或删除 */
+/* h1 {
   font-size: 3.2em;
   line-height: 1.1;
-}
+} */
 
-button {
+/* button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
@@ -52,9 +67,10 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
+} */
 
-@media (prefers-color-scheme: light) {
+/* 媒体查询和 prefers-color-scheme 通常也交给 Tailwind 来处理，避免重复定义 */
+/* @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
@@ -65,4 +81,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
