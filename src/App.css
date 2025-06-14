@@ -1,56 +1,67 @@
-/* src/App.css */
+/* App.css */
 
-/* 更紧凑的填空样式（下划线 + 无边框） */
-input[type="text"].char-input {
-  width: 1.5rem;
+.underline-container {
+  display: inline-block;
+  position: relative;
+  margin: 0 1px;
+}
+
+.underline-input {
+  width: 1.25rem;
   height: 2rem;
   font-size: 1.25rem;
   text-align: center;
-  margin: 0 0.1rem;
-  padding: 0;
   border: none;
-  border-bottom: 2px solid #d1d5db; /* gray-300 默认下划线 */
-  background-color: transparent;
+  border-bottom: 2px solid #d1d5db;
+  background: transparent;
   outline: none;
-  transition: border-color 0.2s ease-in-out;
+  margin: 0 1px;
 }
 
-input[type="text"].char-input:focus {
-  border-bottom-color: #3b82f6; /* blue-500 */
+.underline-input.correct {
+  border-bottom: 2px solid #22c55e;
 }
 
-input[type="text"].char-input.border-red-500 {
-  border-bottom-color: #ef4444;
+.underline-input.wrong {
+  border-bottom: 2px solid #ef4444;
 }
 
-input[type="text"].char-input.border-green-500 {
-  border-bottom-color: #22c55e;
-}
-
-input[type="text"].char-input.border-blue-500 {
-  border-bottom-color: #3b82f6;
-}
-
-/* 按钮样式：白底无边框，hover 时加浅灰背景和阴影 */
-button {
-  transition: all 0.2s ease-in-out;
-}
-
-button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-button:not(:disabled) {
-  background-color: white;
-  border: none;
-  padding: 0.6rem 1.5rem;
+.button-base {
+  min-width: 6rem;
+  padding: 0.65rem 1.5rem;
   border-radius: 9999px;
   font-size: 1rem;
   font-weight: 600;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease-in-out;
+  background-color: white;
+  border: none;
 }
 
-button:not(:disabled):hover {
-  background-color: #f9fafb; /* gray-50 */
+.button-blue {
+  color: #3b82f6;
+}
+.button-blue:hover {
+  background-color: #eff6ff;
+}
+
+.button-yellow {
+  color: #f59e0b;
+}
+.button-yellow:hover {
+  background-color: #fef3c7;
+}
+
+.button-green {
+  color: #22c55e;
+}
+.button-green:hover {
+  background-color: #dcfce7;
+}
+
+.button-disabled {
+  color: #9ca3af;
+  background-color: #f3f4f6;
+  cursor: not-allowed;
+  box-shadow: none;
 }
