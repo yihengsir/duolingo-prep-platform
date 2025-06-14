@@ -1,100 +1,80 @@
-/* src/App.css */
+/* App.css */
 
-/* 输入框下划线样式 */
+body {
+  font-family: 'Inter', sans-serif;
+}
+
 .char-input {
   width: 1.5rem;
+  height: 1.5rem;
   text-align: center;
-  font-size: 1.1rem;
   border: none;
-  border-bottom: 2px solid #d1d5db; /* gray-300 */
-  margin: 0 2px;
-  padding: 0;
+  border-bottom: 2px solid #ccc;
   outline: none;
-  background: transparent;
-  transition: border-color 0.2s ease-in-out;
+  margin-right: 0.25rem;
+  font-size: 1rem;
+  background-color: transparent;
+  transition: border-color 0.2s;
 }
 
 .char-input:focus {
-  border-color: #3b82f6; /* blue-500 */
+  border-color: #3b82f6;
 }
 
-/* 正确答案样式 */
-.char-input.correct {
-  border-bottom-color: #22c55e; /* green-500 */
+.correct {
+  border-bottom-color: #22c55e;
   color: #22c55e;
 }
 
-/* 错误答案样式 */
-.char-input.incorrect {
-  border-bottom-color: #ef4444; /* red-500 */
+.incorrect {
+  border-bottom-color: #ef4444;
   color: #ef4444;
 }
 
-/* 包裹每个单词的容器，防止换行 */
-.char-group {
-  display: inline-flex;
-  gap: 2px;
-  white-space: nowrap;
-}
-
-/* 控制整体文本区域的左右间距 */
-.text-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  line-height: 2;
-  text-align: left;
-}
-
-/* 按钮基础样式 */
 .button-base {
-  padding: 0.5rem 1.5rem;
-  font-size: 0.95rem;
-  font-weight: 600;
+  padding: 0.5rem 1.25rem;
   border-radius: 9999px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
-  transition: background-color 0.2s ease, color 0.2s ease;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: background-color 0.2s, color 0.2s;
   border: none;
-  background-color: white;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  display: inline-block;
 }
 
-/* 可用按钮颜色变化 */
-.button-blue:hover {
-  background-color: #e0f2fe;
+.button-blue {
+  background-color: white;
+  color: #1d4ed8;
+  border: 1px solid #93c5fd;
 }
+
+.button-blue:hover {
+  background-color: #eff6ff;
+}
+
+.button-yellow {
+  background-color: white;
+  color: #d97706;
+  border: 1px solid #fcd34d;
+}
+
+.button-yellow:hover {
+  background-color: #fef3c7;
+}
+
+.button-green {
+  background-color: white;
+  color: #16a34a;
+  border: 1px solid #86efac;
+}
+
 .button-green:hover {
   background-color: #dcfce7;
 }
-.button-yellow:hover {
-  background-color: #fef9c3;
-}
 
-/* 颜色状态 */
-.button-blue {
-  color: #2563eb;
-  border: 1px solid #2563eb;
-}
-.button-green {
-  color: #16a34a;
-  border: 1px solid #16a34a;
-}
-.button-yellow {
-  color: #ca8a04;
-  border: 1px solid #ca8a04;
-}
 .button-disabled {
-  color: #9ca3af;
   background-color: #f3f4f6;
+  color: #9ca3af;
   cursor: not-allowed;
-  border: 1px solid #d1d5db;
-}
-
-/* 左上右上按钮容器 */
-.nav-buttons {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  right: 1rem;
-  display: flex;
-  justify-content: space-between;
 }
