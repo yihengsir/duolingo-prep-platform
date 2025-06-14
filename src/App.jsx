@@ -110,46 +110,64 @@ function App() {
     }
   };
 
+  const goToPreviousQuestion = () => {
+    if (currentQuestionIndex > 0) {
+      setCurrentQuestionIndex(i => i - 1);
+    }
+  };
+
   const renderQuestionText = () => {
+  const parts = currentQuestion.text.split('[BLANK]');
+  const elements = [];
+
+  parts.forEach((part, index) => {
+    if (part) {
+      elements.push(<span key={`part-${index}`}>{part}</span>);
+    }
+
+    if (index < currentQuestion.answers.length) {
+      const isCorrectChar = inputValues[index] === currentQuestion.answers[index];
+      const inputClass = isCorrect === null
+        ? 'underline-input'
+        : isCorrectChar
+        ? 'underline-input correct'
+        : 'underline-input wrong';
+
+      elements.push(
+        <span key={`blank-${index}`} className="blank-word">
+          <input
+            ref={(el) => (inputRefs.current[index] = el)}
+            type="text"
+            maxLength="1"
+            className={inputClass}
+            value={inputValues[index]}
+            onChange={(e) => handleInputChange(e, index)}
+            onKeyDown={(e) => handleKeyDown(e, index)}
+            disabled={timeLeft === 0 || isCorrect !== null}
+          />
+        </span>
+      );
+    }
+  });
+
+  return <div className="text-wrapper">{elements}</div>;
+};
+    return <div className="text-wrapper px-2 md:px-4">{elements}</div>;
+  };
+
+  const renderCorrectAnswer = () => {
     const parts = currentQuestion.text.split('[BLANK]');
     const elements = [];
-    parts.forEach((part, i) => {
-      elements.push(<span key={`part-${i}`}>{part}</span>);
-      if (i < currentQuestion.answers.length) {
-        const correct = inputValues[i] === currentQuestion.answers[i];
-        const showResult = isCorrect !== null || timeLeft === 0;
-        elements.push(
-          <span key={`input-${i}`} className="inline-block underline-container">
-            <input
-              type="text"
-              maxLength={1}
-              className={`underline-input ${showResult ? (correct ? 'correct' : 'wrong') : ''}`}
-              value={inputValues[i]}
-              onChange={e => handleInputChange(e, i)}
-              onKeyDown={e => handleKeyDown(e, i)}
-              ref={el => inputRefs.current[i] = el}
-              disabled={showResult}
-            />
-          </span>
-        );
+    parts.forEach((part, index) => {
+      elements.push(<span key={`correct-part-${index}`}>{part}</span>);
+      if (index < currentQuestion.answers.length) {
+        elements.push(<span key={`correct-answer-${index}`} className="text-blue-700 font-extrabold mx-0.5">{currentQuestion.answers[index]}</span>);
       }
     });
     return elements;
   };
 
-  const renderCorrectAnswer = () => {
-    const parts = currentQuestion.text.split('[BLANK]');
-    const el = [];
-    parts.forEach((p, i) => {
-      el.push(<span key={`p-${i}`}>{p}</span>);
-      if (i < currentQuestion.answers.length) {
-        el.push(<span key={`a-${i}`} className="text-blue-700 font-extrabold mx-0.5">{currentQuestion.answers[i]}</span>);
-      }
-    });
-    return el;
-  };
-
-  const formatTime = s => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
+  const formatTime = (s) => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
 
   const handleInvitationCodeSubmit = () => {
     if (invitationCodeInput === INVITATION_CODE) {
@@ -178,25 +196,30 @@ function App() {
             <button className="button-base button-blue mt-4" onClick={handleInvitationCodeSubmit}>进入</button>
           </div>
         );
+
       case 'questionTypeSelection':
-        return (
-          <div className="text-center">
-            <h1 className="text-3xl font-bold mb-4 text-blue-600">选择题型</h1>
-            <button onClick={() => setGameState('readAndComplete')} className="button-base button-green">阅读</button>
-          </div>
-        );
       case 'readAndComplete':
         return (
           <>
             <div className="absolute top-4 left-4 text-xl font-bold text-blue-600">{formatTime(timeLeft)}</div>
+            <div className="w-full flex justify-between mb-4">
+              {currentQuestionIndex > 0 ? (
+                <button
+                  onClick={goToPreviousQuestion}
+                  className="text-sm px-3 py-1 rounded-full border border-gray-300 shadow bg-white hover:bg-gray-50"
+                >上一题</button>
+              ) : <div></div>}
+              <button
+                onClick={goToNextQuestion}
+                className="text-sm px-3 py-1 rounded-full border border-gray-300 shadow bg-white hover:bg-gray-50"
+              >下一题</button>
+            </div>
             <h1 className="text-2xl font-bold mb-2 text-blue-600 text-center">Duolingo DET Prep - 阅读并补全</h1>
             <h2 className="text-lg text-gray-700 text-center mb-6">{currentQuestion.title}</h2>
-            <div className="text-lg text-left leading-relaxed whitespace-pre-wrap flex flex-wrap gap-1 px-2 md:px-8">{renderQuestionText()}</div>
-            {feedbackMessage && (
-              <p className={`mt-6 text-center text-lg font-semibold ${isCorrect ? 'text-green-600' : 'text-red-600'}`}>
-                {feedbackMessage}
-              </p>
-            )}
+            <div className="text-lg text-left leading-relaxed whitespace-pre-wrap flex flex-wrap gap-1 px-2 md:px-8">
+              {renderQuestionText()}
+            </div>
+            {feedbackMessage && <p className={`mt-6 text-center text-lg font-semibold ${isCorrect ? 'text-green-600' : 'text-red-600'}`}>{feedbackMessage}</p>}
             {showCorrectAnswer && (
               <div className="mt-6 p-4 bg-blue-50 border-l-4 border-blue-500 text-blue-800 rounded-md shadow-sm">
                 <p className="font-semibold mb-2">正确答案:</p>
@@ -204,22 +227,13 @@ function App() {
               </div>
             )}
             <div className="text-center mt-8 flex flex-wrap justify-center gap-4">
-              <button
-                onClick={checkAnswer}
-                className={`button-base ${allBlanksFilled && isCorrect === null && timeLeft > 0 ? 'button-blue' : 'button-disabled'}`}
-                disabled={!allBlanksFilled || isCorrect !== null || timeLeft === 0}
-              >
-                检查答案
-              </button>
+              <button onClick={checkAnswer} className={`button-base ${allBlanksFilled && isCorrect === null && timeLeft > 0 ? 'button-blue' : 'button-disabled'}`} disabled={!allBlanksFilled || isCorrect !== null || timeLeft === 0}>检查答案</button>
               <button onClick={redoQuestion} className="button-base button-yellow">重做</button>
-              {isCorrect !== null && (
-                <button onClick={goToNextQuestion} className="button-base button-green">
-                  {currentQuestionIndex < questionsData.length - 1 ? '下一题' : '完成'}
-                </button>
-              )}
+              {isCorrect !== null && <button onClick={goToNextQuestion} className="button-base button-green">{currentQuestionIndex < questionsData.length - 1 ? '下一题' : '完成'}</button>}
             </div>
           </>
         );
+
       default:
         return null;
     }

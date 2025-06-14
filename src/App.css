@@ -1,67 +1,142 @@
-/* App.css */
+/* src/App.css */
 
-.underline-container {
-  display: inline-block;
-  position: relative;
-  margin: 0 1px;
-}
-
+/* 输入框底部下划线风格，统一宽度与对齐 */
 .underline-input {
-  width: 1.25rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 2.25rem;
   font-size: 1.25rem;
   text-align: center;
+  background-color: transparent;
   border: none;
-  border-bottom: 2px solid #d1d5db;
-  background: transparent;
-  outline: none;
-  margin: 0 1px;
+  border-bottom: 2px solid #cbd5e1; /* slate-300 */
+  margin: 0 0.1rem;
+  transition: border-color 0.2s ease-in-out;
 }
 
+.underline-input:focus {
+  outline: none;
+  border-bottom-color: #3b82f6; /* blue-500 */
+}
+
+/* 正确与错误状态 */
 .underline-input.correct {
-  border-bottom: 2px solid #22c55e;
+  border-bottom-color: #22c55e; /* green-500 */
 }
 
 .underline-input.wrong {
-  border-bottom: 2px solid #ef4444;
+  border-bottom-color: #ef4444; /* red-500 */
 }
 
+/* 输入框组合，防止断词 */
+.char-group {
+  display: inline-flex;
+  gap: 2px;
+  white-space: nowrap;
+}
+
+/* 包裹整个段落的容器 */
+.text-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  text-align: left;
+  line-height: 2rem;
+}
+
+/* 按钮基础样式 */
 .button-base {
-  min-width: 6rem;
-  padding: 0.65rem 1.5rem;
+  padding: 0.5rem 1.25rem;
   border-radius: 9999px;
-  font-size: 1rem;
   font-weight: 600;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-  transition: all 0.2s ease-in-out;
-  background-color: white;
+  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   border: none;
+  background-color: white;
+  transition: background-color 0.2s ease-in-out;
 }
 
+/* 状态按钮颜色 */
 .button-blue {
-  color: #3b82f6;
+  color: #2563eb; /* blue-600 */
+  border: 1px solid #2563eb;
 }
+
 .button-blue:hover {
-  background-color: #eff6ff;
+  background-color: #ebf4ff;
 }
 
 .button-yellow {
-  color: #f59e0b;
+  color: #d97706;
+  border: 1px solid #facc15;
 }
+
 .button-yellow:hover {
-  background-color: #fef3c7;
+  background-color: #fef9c3;
 }
 
 .button-green {
-  color: #22c55e;
+  color: #16a34a;
+  border: 1px solid #16a34a;
 }
+
 .button-green:hover {
   background-color: #dcfce7;
 }
 
 .button-disabled {
-  color: #9ca3af;
   background-color: #f3f4f6;
+  color: #9ca3af;
   cursor: not-allowed;
-  box-shadow: none;
+  border: none;
+}
+
+/* 邀请码输入框样式 */
+input[type="text"]::placeholder {
+  color: #9ca3af;
+
+  /* 控制整体文本区域排版为左对齐，可换行 */
+.text-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  text-align: left;
+  line-height: 2rem;
+  word-break: keep-all;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* 控制单词不被断开：一个单词为一个包裹容器 */
+.blank-word {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  gap: 2px;
+  white-space: nowrap;
+}
+
+/* 控制输入框风格 */
+.underline-input {
+  width: 1.4rem;
+  height: 2rem;
+  font-size: 1.125rem;
+  text-align: center;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #cbd5e1;
+  padding: 0;
+}
+
+.underline-input:focus {
+  outline: none;
+  border-bottom-color: #3b82f6;
+}
+
+/* 正确和错误状态的样式 */
+.underline-input.correct {
+  border-bottom-color: #22c55e;
+}
+
+.underline-input.wrong {
+  border-bottom-color: #ef4444;
 }
