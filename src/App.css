@@ -1,80 +1,85 @@
-/* App.css */
-
-body {
-  font-family: 'Inter', sans-serif;
-}
-
+/* 基础输入框样式 */
 .char-input {
   width: 1.5rem;
   height: 1.5rem;
-  text-align: center;
   border: none;
   border-bottom: 2px solid #ccc;
-  outline: none;
-  margin-right: 0.25rem;
+  text-align: center;
   font-size: 1rem;
-  background-color: transparent;
-  transition: border-color 0.2s;
+  outline: none;
+  margin: 0 1px;
+  transition: all 0.2s ease-in-out;
 }
 
 .char-input:focus {
   border-color: #3b82f6;
+  background-color: #eef6ff;
 }
 
+/* 正确与错误反馈 */
 .correct {
-  border-bottom-color: #22c55e;
-  color: #22c55e;
+  border-bottom-color: #16a34a;
+  color: #16a34a;
 }
 
 .incorrect {
-  border-bottom-color: #ef4444;
-  color: #ef4444;
+  border-bottom-color: #dc2626;
+  color: #dc2626;
 }
 
+/* 按钮基础样式 */
 .button-base {
-  padding: 0.5rem 1.25rem;
+  padding: 0.5rem 1.2rem;
   border-radius: 9999px;
-  font-weight: 600;
   font-size: 0.875rem;
-  transition: background-color 0.2s, color 0.2s;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   border: none;
-  cursor: pointer;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-  display: inline-block;
+  transition: all 0.2s ease-in-out;
 }
 
+/* 按钮颜色变体 */
 .button-blue {
-  background-color: white;
-  color: #1d4ed8;
-  border: 1px solid #93c5fd;
+  background-color: #3b82f6;
+  color: white;
 }
 
 .button-blue:hover {
-  background-color: #eff6ff;
+  background-color: #2563eb;
 }
 
 .button-yellow {
   background-color: white;
-  color: #d97706;
-  border: 1px solid #fcd34d;
+  color: #f59e0b;
+  border: 2px solid #facc15;
 }
 
 .button-yellow:hover {
-  background-color: #fef3c7;
+  background-color: #fef9c3;
 }
 
 .button-green {
   background-color: white;
   color: #16a34a;
-  border: 1px solid #86efac;
+  border: 2px solid #16a34a;
 }
 
 .button-green:hover {
   background-color: #dcfce7;
 }
 
-.button-disabled {
-  background-color: #f3f4f6;
-  color: #9ca3af;
-  cursor: not-allowed;
+/* 题目区域字间距 */
+.text-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  line-height: 1.75rem;
+  font-size: 1.125rem;
+}
+
+/* 图片设置避免拉伸 */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
