@@ -1,7 +1,6 @@
 /* src/App.css */
 
 /* 自定义输入框样式，使其更紧凑 */
-/* 确保这里定义的样式能覆盖 Tailwind 的默认样式，或者我们直接在 JSX 中移除冲突的 Tailwind 类 */
 input[type="text"].char-input {
   width: 2rem; /* 调整为更小的值，例如 2rem (32px) */
   height: 2.5rem; /* 增加高度使其更易点击和美观 */
@@ -12,7 +11,6 @@ input[type="text"].char-input {
   padding: 0; /* 移除内边距 */
   box-sizing: border-box; /* 确保 padding 不会增加总宽度 */
   transition: border-color 0.2s ease-in-out; /* 添加过渡效果 */
-  /* background-color: transparent; */ /* 如果需要透明背景 */
 }
 
 input[type="text"].char-input:focus {
