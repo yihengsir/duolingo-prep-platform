@@ -1,5 +1,3 @@
-// src/App.jsx
-
 import { useState, useEffect, useRef, useCallback } from 'react';
 import './App.css';
 import questionsData from '../data/read_and_complete.json';
@@ -14,24 +12,23 @@ function App() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
   const currentQuestion = questionsData[currentQuestionIndex];
-  const [inputValues, setInputValues] = useState(Array(currentQuestion.answers.length).fill(''));
+  const [inputValues, setInputValues] = useState(
+    Array(currentQuestion.answers.length).fill('')
+  );
   const [feedbackMessage, setFeedbackMessage] = useState('');
   const [isCorrect, setIsCorrect] = useState(null);
-  const [allBlanksFilled, setAllBlanksFilled] = useState(false);
   const [showCorrectAnswer, setShowCorrectAnswer] = useState(false);
-
-  const inputRefs = useRef([]);
   const [timeLeft, setTimeLeft] = useState(TIMER_DURATION);
   const timerRef = useRef(null);
+  const inputRefs = useRef([]);
 
   const resetQuestionState = useCallback(() => {
     setInputValues(Array(currentQuestion.answers.length).fill(''));
     setFeedbackMessage('');
     setIsCorrect(null);
-    setAllBlanksFilled(false);
     setShowCorrectAnswer(false);
-    inputRefs.current = [];
     setTimeLeft(TIMER_DURATION);
+    inputRefs.current = [];
     if (timerRef.current) clearInterval(timerRef.current);
     timerRef.current = setInterval(() => {
       setTimeLeft(prev => {
@@ -45,62 +42,49 @@ function App() {
         return prev - 1;
       });
     }, 1000);
-  }, [currentQuestion.answers.length, currentQuestionIndex]);
+  }, [currentQuestion.answers.length]);
 
   useEffect(() => {
     if (gameState === 'readAndComplete') {
       resetQuestionState();
-      const timeoutId = setTimeout(() => {
-        if (inputRefs.current[0]) inputRefs.current[0].focus();
-      }, 100);
-      return () => {
-        clearInterval(timerRef.current);
-        clearTimeout(timeoutId);
-      };
-    } else {
-      if (timerRef.current) clearInterval(timerRef.current);
     }
-  }, [currentQuestionIndex, resetQuestionState, gameState]);
+    return () => clearInterval(timerRef.current);
+  }, [currentQuestionIndex, gameState, resetQuestionState]);
 
-  useEffect(() => {
-    const filled = inputValues.every(v => v && v.length === 1);
-    setAllBlanksFilled(filled);
-  }, [inputValues]);
-
-  const handleInputChange = (e, index) => {
-    const val = e.target.value;
+  const handleWordChange = (e, wordIdx, letterIdx) => {
+    const newChar = e.target.value.slice(0, 1).toLowerCase();
     const newValues = [...inputValues];
-    newValues[index] = val.slice(0, 1).toLowerCase();
+    const word = newValues[wordIdx] || ''.padEnd(currentQuestion.answers[wordIdx].length, ' ');
+    newValues[wordIdx] =
+      word.substring(0, letterIdx) + newChar + word.substring(letterIdx + 1);
     setInputValues(newValues);
-    setFeedbackMessage('');
-    setIsCorrect(null);
-    setShowCorrectAnswer(false);
-    if (val && index < inputRefs.current.length - 1) {
-      inputRefs.current[index + 1].focus();
-    }
   };
 
-  const handleKeyDown = (e, index) => {
-    if (e.key === 'Backspace' && inputValues[index] === '' && index > 0) {
-      const newValues = [...inputValues];
-      newValues[index - 1] = '';
-      setInputValues(newValues);
-      inputRefs.current[index - 1].focus();
-      e.preventDefault();
+  const handleWordKeyDown = (e, wordIdx, letterIdx) => {
+    if (e.key === 'ArrowRight') {
+      const next = inputRefs.current[wordIdx]?.[letterIdx + 1];
+      if (next) next.focus();
+    } else if (e.key === 'ArrowLeft') {
+      const prev = inputRefs.current[wordIdx]?.[letterIdx - 1];
+      if (prev) prev.focus();
+    } else if (e.key === 'Backspace') {
+      const currentVal = inputValues[wordIdx]?.[letterIdx];
+      if (!currentVal && letterIdx > 0) {
+        const prev = inputRefs.current[wordIdx]?.[letterIdx - 1];
+        if (prev) prev.focus();
+      }
     }
-    if (e.key === 'ArrowRight' && index < inputRefs.current.length - 1) inputRefs.current[index + 1].focus();
-    if (e.key === 'ArrowLeft' && index > 0) inputRefs.current[index - 1].focus();
   };
 
   const checkAnswer = () => {
     clearInterval(timerRef.current);
-    const allCorrect = inputValues.every((v, i) => v === currentQuestion.answers[i]);
+    const allCorrect = currentQuestion.answers.every(
+      (ans, idx) => inputValues[idx] === ans
+    );
     setIsCorrect(allCorrect);
     setFeedbackMessage(allCorrect ? '所有填空都正确！' : '部分填空有误，请检查。');
     setShowCorrectAnswer(!allCorrect);
   };
-
-  const redoQuestion = () => resetQuestionState();
 
   const goToNextQuestion = () => {
     if (currentQuestionIndex < questionsData.length - 1) {
@@ -110,68 +94,71 @@ function App() {
     }
   };
 
-  const goToPreviousQuestion = () => {
+  const goToPrevQuestion = () => {
     if (currentQuestionIndex > 0) {
       setCurrentQuestionIndex(i => i - 1);
     }
   };
 
   const renderQuestionText = () => {
-  const parts = currentQuestion.text.split('[BLANK]');
-  const elements = [];
-
-  parts.forEach((part, index) => {
-    if (part) {
+    const parts = currentQuestion.text.split('[BLANK]');
+    const elements = [];
+    parts.forEach((part, index) => {
       elements.push(<span key={`part-${index}`}>{part}</span>);
-    }
-
-    if (index < currentQuestion.answers.length) {
-      const isCorrectChar = inputValues[index] === currentQuestion.answers[index];
-      const inputClass = isCorrect === null
-        ? 'underline-input'
-        : isCorrectChar
-        ? 'underline-input correct'
-        : 'underline-input wrong';
-
-      elements.push(
-        <span key={`blank-${index}`} className="blank-word">
-          <input
-            ref={(el) => (inputRefs.current[index] = el)}
-            type="text"
-            maxLength="1"
-            className={inputClass}
-            value={inputValues[index]}
-            onChange={(e) => handleInputChange(e, index)}
-            onKeyDown={(e) => handleKeyDown(e, index)}
-            disabled={timeLeft === 0 || isCorrect !== null}
-          />
-        </span>
-      );
-    }
-  });
-
-  return <div className="text-wrapper">{elements}</div>;
-};
-    return <div className="text-wrapper px-2 md:px-4">{elements}</div>;
+      if (index < currentQuestion.answers.length) {
+        const answer = currentQuestion.answers[index];
+        const showResult = isCorrect !== null || timeLeft === 0;
+        elements.push(
+          <span key={`group-${index}`} className="inline-flex gap-[2px] whitespace-nowrap">
+            {answer.split('').map((_, letterIdx) => {
+              const isCharCorrect =
+                inputValues[index]?.[letterIdx] === answer[letterIdx];
+              const inputClass = showResult
+                ? isCharCorrect
+                  ? 'char-input correct'
+                  : 'char-input incorrect'
+                : 'char-input';
+              return (
+                <input
+                  key={`input-${index}-${letterIdx}`}
+                  type="text"
+                  maxLength={1}
+                  className={inputClass}
+                  value={inputValues[index]?.[letterIdx] || ''}
+                  onChange={(e) => handleWordChange(e, index, letterIdx)}
+                  onKeyDown={(e) => handleWordKeyDown(e, index, letterIdx)}
+                  ref={(el) => {
+                    if (!inputRefs.current[index]) inputRefs.current[index] = [];
+                    inputRefs.current[index][letterIdx] = el;
+                  }}
+                  disabled={showResult}
+                />
+              );
+            })}
+          </span>
+        );
+      }
+    });
+    return <div className="text-left flex flex-wrap gap-1 leading-relaxed">{elements}</div>;
   };
 
   const renderCorrectAnswer = () => {
     const parts = currentQuestion.text.split('[BLANK]');
-    const elements = [];
+    const result = [];
     parts.forEach((part, index) => {
-      elements.push(<span key={`correct-part-${index}`}>{part}</span>);
+      result.push(part);
       if (index < currentQuestion.answers.length) {
-        elements.push(<span key={`correct-answer-${index}`} className="text-blue-700 font-extrabold mx-0.5">{currentQuestion.answers[index]}</span>);
+        result.push(currentQuestion.answers[index]);
       }
     });
-    return elements;
+    return result.join('');
   };
 
   const formatTime = (s) => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
 
   const handleInvitationCodeSubmit = () => {
     if (invitationCodeInput === INVITATION_CODE) {
-      setGameState('questionTypeSelection');
+      setGameState('readAndComplete');
       setInvitationCodeError('');
     } else {
       setInvitationCodeError('邀请码错误，请重试。');
@@ -183,53 +170,49 @@ function App() {
       case 'welcome':
         return (
           <div className="text-center flex flex-col items-center">
-            <img src="https://raw.githubusercontent.com/yihengsir/duolingo-prep-platform/main/public/unnamed.png" alt="logo" className="w-36 h-36 mb-6" />
             <h1 className="text-3xl font-bold text-blue-600 mb-4">Duolingo DET Prep with Fengfeng</h1>
             <input
               className="px-4 py-2 border border-gray-300 rounded-md w-60 text-center"
               placeholder="请输入邀请码"
               value={invitationCodeInput}
-              onChange={e => setInvitationCodeInput(e.target.value)}
-              onKeyPress={e => e.key === 'Enter' && handleInvitationCodeSubmit()}
+              onChange={(e) => setInvitationCodeInput(e.target.value)}
+              onKeyDown={(e) => e.key === 'Enter' && handleInvitationCodeSubmit()}
             />
             {invitationCodeError && <p className="text-red-500 text-sm mt-2">{invitationCodeError}</p>}
             <button className="button-base button-blue mt-4" onClick={handleInvitationCodeSubmit}>进入</button>
           </div>
         );
 
-      case 'questionTypeSelection':
       case 'readAndComplete':
         return (
           <>
-            <div className="absolute top-4 left-4 text-xl font-bold text-blue-600">{formatTime(timeLeft)}</div>
-            <div className="w-full flex justify-between mb-4">
-              {currentQuestionIndex > 0 ? (
-                <button
-                  onClick={goToPreviousQuestion}
-                  className="text-sm px-3 py-1 rounded-full border border-gray-300 shadow bg-white hover:bg-gray-50"
-                >上一题</button>
-              ) : <div></div>}
-              <button
-                onClick={goToNextQuestion}
-                className="text-sm px-3 py-1 rounded-full border border-gray-300 shadow bg-white hover:bg-gray-50"
-              >下一题</button>
+            <div className="absolute top-4 left-4">
+              <button onClick={goToPrevQuestion} className="button-base text-sm">上一题</button>
             </div>
-            <h1 className="text-2xl font-bold mb-2 text-blue-600 text-center">Duolingo DET Prep - 阅读并补全</h1>
-            <h2 className="text-lg text-gray-700 text-center mb-6">{currentQuestion.title}</h2>
-            <div className="text-lg text-left leading-relaxed whitespace-pre-wrap flex flex-wrap gap-1 px-2 md:px-8">
-              {renderQuestionText()}
+            <div className="absolute top-4 right-4">
+              <button onClick={goToNextQuestion} className="button-base text-sm">下一题</button>
             </div>
-            {feedbackMessage && <p className={`mt-6 text-center text-lg font-semibold ${isCorrect ? 'text-green-600' : 'text-red-600'}`}>{feedbackMessage}</p>}
+            <div className="text-left text-sm text-gray-500 mb-2">剩余时间: <span className="font-bold text-blue-600">{formatTime(timeLeft)}</span></div>
+            <div className="text-center text-blue-600 text-xl font-bold mb-1">Duolingo DET Prep - 阅读并补全</div>
+            <div className="text-center text-gray-500 text-sm mb-4">{currentQuestion.title}</div>
+            {renderQuestionText()}
+            {feedbackMessage && (
+              <p className={`mt-6 text-center text-lg font-semibold ${isCorrect ? 'text-green-600' : 'text-red-600'}`}>{feedbackMessage}</p>
+            )}
             {showCorrectAnswer && (
               <div className="mt-6 p-4 bg-blue-50 border-l-4 border-blue-500 text-blue-800 rounded-md shadow-sm">
                 <p className="font-semibold mb-2">正确答案:</p>
                 <p className="whitespace-pre-wrap text-lg">{renderCorrectAnswer()}</p>
               </div>
             )}
-            <div className="text-center mt-8 flex flex-wrap justify-center gap-4">
-              <button onClick={checkAnswer} className={`button-base ${allBlanksFilled && isCorrect === null && timeLeft > 0 ? 'button-blue' : 'button-disabled'}`} disabled={!allBlanksFilled || isCorrect !== null || timeLeft === 0}>检查答案</button>
-              <button onClick={redoQuestion} className="button-base button-yellow">重做</button>
-              {isCorrect !== null && <button onClick={goToNextQuestion} className="button-base button-green">{currentQuestionIndex < questionsData.length - 1 ? '下一题' : '完成'}</button>}
+            <div className="text-center mt-6 flex justify-center gap-4">
+              <button onClick={checkAnswer} className="button-base button-blue">检查答案</button>
+              <button onClick={resetQuestionState} className="button-base button-yellow">重做</button>
+              {isCorrect !== null && (
+                <button onClick={goToNextQuestion} className="button-base button-green">
+                  {currentQuestionIndex < questionsData.length - 1 ? '下一题' : '完成'}
+                </button>
+              )}
             </div>
           </>
         );
