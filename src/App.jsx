@@ -21,27 +21,27 @@ function App() {
   const currentQuestion = questionsData[currentQuestionIndex];
 
   const resetQuestionState = useCallback(() => {
-    setInputValues(Array(currentQuestion.answers.length).fill(''));
-    setFeedbackMessage('');
-    setIsCorrect(null);
-    setShowCorrectAnswer(false);
-    inputRefs.current = Array(currentQuestion.answers.length).fill(null);
-    setTimeLeft(TIMER_DURATION);
+  setInputValues(currentQuestion.answers.map(() => ''));
+  inputRefs.current = currentQuestion.answers.map(() => null);
+  setFeedbackMessage('');
+  setIsCorrect(null);
+  setShowCorrectAnswer(false);
+  setTimeLeft(TIMER_DURATION);
 
-    if (timerRef.current) clearInterval(timerRef.current);
-    timerRef.current = setInterval(() => {
-      setTimeLeft(prev => {
-        if (prev <= 1) {
-          clearInterval(timerRef.current);
-          setFeedbackMessage('时间到！请检查答案。');
-          setIsCorrect(false);
-          setShowCorrectAnswer(true);
-          return 0;
-        }
-        return prev - 1;
-      });
-    }, 1000);
-  }, [currentQuestion]);
+  if (timerRef.current) clearInterval(timerRef.current);
+  timerRef.current = setInterval(() => {
+    setTimeLeft((prev) => {
+      if (prev <= 1) {
+        clearInterval(timerRef.current);
+        setFeedbackMessage('时间到！请检查答案。');
+        setIsCorrect(false);
+        setShowCorrectAnswer(true);
+        return 0;
+      }
+      return prev - 1;
+    });
+  }, 1000);
+}, [currentQuestion]);
 
   useEffect(() => {
     if (gameState === 'readAndComplete') {
