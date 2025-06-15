@@ -142,7 +142,7 @@ function App() {
       );
 
       if (index < currentQuestion.answers.length) {
-        const showResult = isCorrect !== null || timeLeft === 0;
+        const showResult = isCorrect === true || timeLeft === 0;
         const inputChar = inputValues[blankIndex] || '';
         const isCorrectChar = currentQuestion.answers[blankIndex].toLowerCase() === inputChar.toLowerCase();
 
