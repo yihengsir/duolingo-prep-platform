@@ -2,18 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/duolingo-prep-platform/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Duolingo Prep with Fengfeng</title>
-    <!-- 关键改变：直接通过 CDN 引入 Tailwind CSS，绕过本地编译 -->
+    <!-- 关键改变：直接通过 CDN 引入 Tailwind CSS，确保样式可用 -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts for Inter and Chinese fallbacks (optional, can be moved to App.jsx style if preferred) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="/duolingo-prep-platform/assets/index-BE1gSpKN.js"></script>
-    <link rel="stylesheet" crossorigin href="/duolingo-prep-platform/assets/index-CJCmnu0O.css">
+    <!-- 如果您需要 Inter 字体，可以在这里引入 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script type="module" crossorigin src="/assets/index--c9OSX-d.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-iZoUe8it.css">
   </head>
   <body>
     <div id="root"></div>
-    <!-- main.jsx 会加载 React 应用 -->
   </body>
 </html>

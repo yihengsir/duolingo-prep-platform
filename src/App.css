@@ -1,123 +1,150 @@
-/* src/App.css - 滚回版本2样式 */
+/* src/App.css - Custom styles for Duolingo DET Prep */
 
+/* Apply box-sizing globally for consistent layout behavior */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Basic body styles for background and font */
 body {
   margin: 0;
-  font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif,
-    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "STHeiti";
+  /* font-family 会由 App.jsx 内部的 <style> 标签控制，以便更好地包含中文字体回退 */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f3f4f6;
+  background-color: #f3f4f6; /* Light gray background */
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 100vh; /* Ensure full viewport height */
 }
 
-/* 单个字符填空样式 */
-.char-input {
-  width: 20px;
-  height: 28px;
-  text-align: center;
-  border: 1px solid #d1d5db;
-  border-radius: 0.25rem;
-  margin: 0 2px;
-  padding: 2px;
-  font-weight: 500;
-  color: #1f2937;
-  background-color: #f9fafb;
-  transition: border-color 0.2s, background-color 0.2s;
-}
-
-.char-input:focus {
-  outline: none;
-  border-color: #60a5fa;
-  box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.5);
-  background-color: #fff;
-}
-
-.char-input:disabled {
-  background-color: #e5e7eb;
-  cursor: not-allowed;
-}
-
-.char-input.correct {
-  border-color: #10b981;
-  background-color: #d1fae5;
-  color: #065f46;
-}
-
-.char-input.incorrect {
-  border-color: #ef4444;
-  background-color: #fee2e2;
-  color: #991b1b;
-}
-
-/* 基础按钮样式 */
+/* Base button styles */
 .button-base {
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
-  font-weight: 600;
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
-  display: inline-flex;
+  padding: 0.75rem 1.5rem; /* Padding for buttons */
+  border-radius: 0.5rem; /* Rounded corners */
+  font-weight: 600; /* Semi-bold text */
+  transition: all 0.2s ease-in-out; /* Smooth transitions for hover/focus */
+  cursor: pointer; /* Indicate clickable element */
+  display: inline-flex; /* Allow content to center */
   align-items: center;
   justify-content: center;
-  border: none;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: none; /* No default border */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
+/* Blue button style for primary actions */
 .button-blue {
-  background-color: #3b82f6;
-  color: white;
+  background-color: #3b82f6; /* Blue background */
+  color: white; /* White text */
 }
 
 .button-blue:hover {
-  background-color: #2563eb;
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-  transform: translateY(-1px);
+  background-color: #2563eb; /* Darker blue on hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+  transform: translateY(-1px); /* Slight lift on hover */
 }
 
 .button-blue:active {
-  background-color: #1d4ed8;
+  background-color: #1d4ed8; /* Even darker blue on active */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transform: translateY(0);
 }
 
+/* Yellow button style for secondary actions like "重做" (Redo) */
 .button-yellow {
-  background-color: #fcd34d;
-  color: #78350f;
+  background-color: #fcd34d; /* Yellow background */
+  color: #78350f; /* Dark brown text for contrast */
 }
 
 .button-yellow:hover {
-  background-color: #fbbf24;
+  background-color: #fbbf24; /* Darker yellow on hover */
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
   transform: translateY(-1px);
 }
 
 .button-yellow:active {
-  background-color: #f59e0b;
+  background-color: #f59e0b; /* Even darker yellow on active */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transform: translateY(0);
 }
 
-/* 响应式优化 */
+/* Green button style (used for "阅读并补全" or other success actions) */
+.button-green {
+  background-color: #22c55e; /* Green background */
+  color: white; /* White text */
+}
+
+.button-green:hover {
+  background-color: #16a34a; /* Darker green on hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+.button-green:active {
+  background-color: #15803d; /* Even darker green on active */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transform: translateY(0);
+}
+
+/* Styles for the single character input blanks */
+.char-input {
+  width: 24px; /* Slightly wider for better touch target */
+  height: 32px; /* Slightly taller */
+  text-align: center; /* Center the character */
+  border: 1px solid #d1d5db; /* Light gray border */
+  border-radius: 0.25rem; /* Slightly rounded corners */
+  margin: 0 2px; /* Small margin between blanks and text */
+  padding: 2px; /* Small padding */
+  font-weight: 500; /* Medium font weight */
+  color: #1f2937; /* Dark text color */
+  background-color: #f9fafb; /* Off-white background */
+  transition: border-color 0.2s, background-color 0.2s; /* Smooth transitions */
+}
+
+.char-input:focus {
+  outline: none; /* Remove default outline */
+  border-color: #60a5fa; /* Blue border on focus */
+  box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.5); /* Blue shadow on focus */
+  background-color: #fff; /* White background on focus */
+}
+
+.char-input:disabled {
+  background-color: #e5e7eb; /* Lighter background when disabled */
+  cursor: not-allowed; /* Indicate not editable */
+}
+
+/* Styles for correct input feedback */
+.char-input.correct {
+  border-color: #10b981; /* Green border for correct */
+  background-color: #d1fae5; /* Light green background for correct */
+  color: #065f46; /* Darker green text */
+}
+
+/* Styles for incorrect input feedback */
+.char-input.incorrect {
+  border-color: #ef4444; /* Red border for incorrect */
+  background-color: #fee2e2; /* Light red background for incorrect */
+  color: #991b1b; /* Darker red text */
+}
+
+/* Responsive adjustments for overall layout */
 @media (max-width: 768px) {
   .button-base {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem; /* Slightly smaller padding on mobile */
+    font-size: 0.9rem; /* Slightly smaller font size */
   }
 
   .char-input {
-    width: 18px;
-    height: 26px;
-    font-size: 0.9rem;
+    width: 20px; /* Smaller width for single character on mobile */
+    height: 28px; /* Smaller height */
+    font-size: 0.9rem; /* Smaller font size for blanks */
   }
 }
 
 @media (max-width: 480px) {
   .char-input {
-    width: 16px;
-    height: 24px;
-    font-size: 0.85rem;
+    width: 18px; /* Even smaller width on very small screens */
+    height: 26px; /* Even smaller height */
+    font-size: 0.85rem; /* Even smaller font size for blanks */
   }
 }
