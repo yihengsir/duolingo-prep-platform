@@ -1,64 +1,39 @@
-// src/App.jsx (Duolingo Prep - 最终修复：404错误与样式 V6)
 import { useState, useEffect, useRef, useCallback } from 'react';
+import './App.css';
+import questionsData from '../data/read_and_complete.json'; // 👈 静态导入 JSON
 
-const TIMER_DURATION = 180; // 计时器时长 (秒)
-const INVITATION_CODE = '130'; // 邀请码
+const TIMER_DURATION = 180;
+const INVITATION_CODE = '130';
 
 function App() {
   const [gameState, setGameState] = useState('welcome');
   const [invitationCodeInput, setInvitationCodeInput] = useState('');
   const [invitationCodeError, setInvitationCodeError] = useState('');
-  const [questionsData, setQuestionsData] = useState([]); 
-  const [dataLoadingError, setDataLoadingError] = useState(''); 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-
   const [inputValues, setInputValues] = useState([]);
   const [feedbackMessage, setFeedbackMessage] = useState('');
   const [isCorrect, setIsCorrect] = useState(null);
   const [showCorrectAnswer, setShowCorrectAnswer] = useState(false);
-
   const [timeLeft, setTimeLeft] = useState(TIMER_DURATION);
-  const timerRef = useRef(null);
 
+  const timerRef = useRef(null);
   const inputRefs = useRef([]);
 
-  const currentQuestion = questionsData[currentQuestionIndex]; 
-
-  useEffect(() => {
-    const loadQuestions = async () => {
-      try {
-        // 关键：确保此路径与您实际的 JSON 文件位置匹配
-        // 如果 data 文件夹在项目根目录，这个路径是正确的。
-        const response = await fetch('/data/read_and_complete.json');
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const text = await response.text(); 
-        const data = JSON.parse(text); 
-        setQuestionsData(data);
-      } catch (error) {
-        console.error("Failed to load questions data:", error);
-        setDataLoadingError("加载题目数据失败，请检查文件或网络连接。可能文件编码不正确或路径错误。");
-      }
-    };
-
-    loadQuestions();
-  }, []); 
+  const currentQuestion = questionsData[currentQuestionIndex];
 
   const resetQuestionState = useCallback(() => {
-    if (!currentQuestion) return; 
-    setInputValues(Array(currentQuestion.answers.length).fill('')); 
+    setInputValues(Array(currentQuestion.answers.length).fill(''));
     setFeedbackMessage('');
     setIsCorrect(null);
     setShowCorrectAnswer(false);
-    inputRefs.current = Array(currentQuestion.answers.length).fill(null); 
+    inputRefs.current = Array(currentQuestion.answers.length).fill(null);
     setTimeLeft(TIMER_DURATION);
 
-    if (timerRef.current) clearInterval(timerRef.current); 
-    timerRef.current = setInterval(() => { 
-      setTimeLeft((prev) => {
+    if (timerRef.current) clearInterval(timerRef.current);
+    timerRef.current = setInterval(() => {
+      setTimeLeft(prev => {
         if (prev <= 1) {
-          clearInterval(timerRef.current); 
+          clearInterval(timerRef.current);
           setFeedbackMessage('时间到！请检查答案。');
           setIsCorrect(false);
           setShowCorrectAnswer(true);
@@ -66,38 +41,35 @@ function App() {
         }
         return prev - 1;
       });
-    }, 1000); 
-  }, [currentQuestion]); 
+    }, 1000);
+  }, [currentQuestion]);
 
   useEffect(() => {
-    if (gameState === 'readAndComplete' && currentQuestion) { 
-      resetQuestionState(); 
-      const timeoutId = setTimeout(() => { 
-        if (inputRefs.current[0]) {
-          inputRefs.current[0].focus();
-        }
-      }, 0); 
+    if (gameState === 'readAndComplete') {
+      resetQuestionState();
+      const timeoutId = setTimeout(() => {
+        if (inputRefs.current[0]) inputRefs.current[0].focus();
+      }, 0);
       return () => {
-        clearInterval(timerRef.current); 
-        clearTimeout(timeoutId); 
+        clearInterval(timerRef.current);
+        clearTimeout(timeoutId);
       };
     } else {
-      if (timerRef.current) { 
+      if (timerRef.current) {
         clearInterval(timerRef.current);
         timerRef.current = null;
       }
     }
-  }, [currentQuestionIndex, gameState, resetQuestionState, currentQuestion]);
+  }, [currentQuestionIndex, gameState, resetQuestionState]);
 
   const handleChange = (e, index) => {
-    const val = e.target.value.slice(0, 1); 
+    const val = e.target.value.slice(0, 1);
     const newValues = [...inputValues];
-    newValues[index] = val; 
+    newValues[index] = val;
     setInputValues(newValues);
-
-    setFeedbackMessage(''); 
-    setIsCorrect(null); 
-    setShowCorrectAnswer(false); 
+    setFeedbackMessage('');
+    setIsCorrect(null);
+    setShowCorrectAnswer(false);
 
     if (val && index < currentQuestion.answers.length - 1) {
       inputRefs.current[index + 1]?.focus();
@@ -109,14 +81,14 @@ function App() {
       if (inputValues[index].length === 0 && index > 0) {
         inputRefs.current[index - 1]?.focus();
         const newValues = [...inputValues];
-        newValues[index - 1] = ''; 
+        newValues[index - 1] = '';
         setInputValues(newValues);
-        e.preventDefault(); 
+        e.preventDefault();
       } else if (inputValues[index].length === 1) {
         const newValues = [...inputValues];
         newValues[index] = '';
         setInputValues(newValues);
-        e.preventDefault(); 
+        e.preventDefault();
       }
     } else if (e.key === 'ArrowLeft' && index > 0) {
       inputRefs.current[index - 1]?.focus();
@@ -126,18 +98,17 @@ function App() {
   };
 
   const checkAnswer = () => {
-    clearInterval(timerRef.current); 
-    const isAllCorrect = currentQuestion.answers.every((ansChar, i) =>
-      ansChar.toLowerCase() === (inputValues[i] || '').toLowerCase() 
+    clearInterval(timerRef.current);
+    const allCorrect = currentQuestion.answers.every(
+      (ans, i) => ans.toLowerCase() === (inputValues[i] || '').toLowerCase()
     );
-    setIsCorrect(isAllCorrect);
-    setShowCorrectAnswer(!isAllCorrect); 
-    setFeedbackMessage(
-      isAllCorrect ? '所有填空都正确！' : '部分填空有误，请检查。'
-    );
+    setIsCorrect(allCorrect);
+    setShowCorrectAnswer(!allCorrect);
+    setFeedbackMessage(allCorrect ? '所有填空都正确！' : '部分填空有误，请检查。');
   };
 
-  const formatTime = (s) => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
+  const formatTime = (s) =>
+    `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
 
   const goToNext = () => {
     if (currentQuestionIndex < questionsData.length - 1) {
@@ -161,23 +132,21 @@ function App() {
   };
 
   const renderInputs = () => {
-    if (!currentQuestion) return null; 
-
-    const parts = currentQuestion.text.split('[BLANK]'); 
+    const parts = currentQuestion.text.split('[BLANK]');
     const elements = [];
-    let blankIndex = 0; 
+    let blankIndex = 0;
 
     parts.forEach((part, index) => {
-      elements.push(<span key={`text-${index}`} className="whitespace-pre-wrap">{part}</span>); 
+      elements.push(
+        <span key={`text-${index}`} className="whitespace-pre-wrap">{part}</span>
+      );
 
-      if (index < currentQuestion.answers.length) { 
-        const showResult = isCorrect !== null || timeLeft === 0; 
-        const inputChar = inputValues[blankIndex] || ''; 
-
+      if (index < currentQuestion.answers.length) {
+        const showResult = isCorrect !== null || timeLeft === 0;
+        const inputChar = inputValues[blankIndex] || '';
         const isCorrectChar = currentQuestion.answers[blankIndex].toLowerCase() === inputChar.toLowerCase();
-        
-        // 直接使用 Tailwind 原子类和条件类
-        const inputClasses = `
+
+        const inputClass = `
           w-[24px] h-[32px] text-center border rounded-md mx-[2px] p-[2px] font-semibold text-lg
           focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200
           ${showResult && isCorrectChar ? 'border-green-500 bg-green-100 text-green-700' : ''}
@@ -189,47 +158,31 @@ function App() {
           <input
             key={`input-${blankIndex}`}
             type="text"
-            maxLength={1} 
-            className={inputClasses} 
+            maxLength={1}
+            className={inputClass}
             value={inputChar}
             onChange={(e) => handleChange(e, blankIndex)}
             onKeyDown={(e) => handleKeyDown(e, blankIndex)}
-            ref={(el) => { inputRefs.current[blankIndex] = el; }} 
-            disabled={showResult} 
+            ref={(el) => { inputRefs.current[blankIndex] = el; }}
+            disabled={showResult}
           />
         );
         blankIndex++;
       }
     });
+
     return <div className="flex flex-wrap gap-1 leading-relaxed justify-start items-baseline">{elements}</div>;
   };
 
   const renderContent = () => {
-    if (dataLoadingError) {
-      return (
-        <div className="text-center text-red-600 text-lg font-semibold">
-          {dataLoadingError}
-          <p className="text-sm text-gray-500 mt-2">请确保 'data/read_and_complete.json' 文件存在于项目根目录的 'data' 文件夹中，并且是 UTF-8 编码。</p>
-        </div>
-      );
-    }
-
-    if (questionsData.length === 0 && !dataLoadingError && gameState !== 'welcome') {
-      return (
-        <div className="text-center text-blue-600 text-lg font-semibold">
-          加载题目中...
-        </div>
-      );
-    }
-
     if (gameState === 'welcome') {
       return (
         <div className="text-center flex flex-col items-center">
-          <img 
-            src="/unnamed.png" // 使用 public 目录的相对路径
-            alt="logo" 
-            className="w-36 h-36 rounded-full mb-8 shadow-lg" 
-            loading="lazy" 
+          <img
+            src="/unnamed.png"
+            alt="logo"
+            className="w-36 h-36 rounded-full mb-8 shadow-lg"
+            loading="lazy"
             onError={(e) => { e.target.src = "https://placehold.co/144x144/E0E0E0/333333?text=Logo+Missing"; }}
           />
           <h1 className="text-3xl font-bold text-blue-600 mb-4">Duolingo DET Prep with Fengfeng</h1>
@@ -241,8 +194,8 @@ function App() {
             onKeyDown={(e) => e.key === 'Enter' && handleInvitationCodeSubmit()}
           />
           {invitationCodeError && <p className="text-red-500 text-sm mt-2">{invitationCodeError}</p>}
-          <button 
-            className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-full shadow-md hover:bg-blue-700 transition duration-200 ease-in-out mt-6" 
+          <button
+            className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-full shadow-md hover:bg-blue-700 transition duration-200 ease-in-out mt-6"
             onClick={handleInvitationCodeSubmit}
           >
             进入
@@ -256,7 +209,7 @@ function App() {
         <div className="text-center flex flex-col items-center">
           <h2 className="text-2xl font-bold text-blue-600 mb-6">选择题型</h2>
           <button
-            className="px-12 py-4 bg-green-600 text-white font-semibold rounded-full shadow-lg hover:bg-green-700 transition duration-200 ease-in-out text-xl" 
+            className="px-12 py-4 bg-green-600 text-white font-semibold rounded-full shadow-lg hover:bg-green-700 transition duration-200 ease-in-out text-xl"
             onClick={() => setGameState('readAndComplete')}
           >
             阅读并补全
@@ -267,29 +220,22 @@ function App() {
     }
 
     if (gameState === 'readAndComplete') {
-      if (!currentQuestion) {
-        return (
-          <div className="text-center text-red-600 text-lg font-semibold">
-            题目数据错误或未加载。
-          </div>
-        );
-      }
       return (
         <>
           <div className="absolute top-4 left-4">
-            <button 
-              onClick={goToPrev} 
+            <button
+              onClick={goToPrev}
               className="px-4 py-2 bg-gray-200 text-gray-700 rounded-full shadow-sm hover:bg-gray-300 transition duration-200 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
-              disabled={currentQuestionIndex === 0} 
+              disabled={currentQuestionIndex === 0}
             >
               上一题
             </button>
           </div>
           <div className="absolute top-4 right-4">
-            <button 
-              onClick={goToNext} 
+            <button
+              onClick={goToNext}
               className="px-4 py-2 bg-gray-200 text-gray-700 rounded-full shadow-sm hover:bg-gray-300 transition duration-200 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
-              disabled={currentQuestionIndex === questionsData.length - 1} 
+              disabled={currentQuestionIndex === questionsData.length - 1}
             >
               下一题
             </button>
@@ -301,31 +247,29 @@ function App() {
             剩余时间: <span className="text-blue-600 font-bold">{formatTime(timeLeft)}</span>　 第 {currentQuestionIndex + 1} 题 / 共 {questionsData.length} 题
           </div>
 
-          {renderInputs()} 
+          {renderInputs()}
 
-          {feedbackMessage && ( 
+          {feedbackMessage && (
             <p className={`mt-6 text-center text-lg font-semibold ${isCorrect ? 'text-green-600' : 'text-red-600'}`}>{feedbackMessage}</p>
           )}
 
-          {showCorrectAnswer && ( 
+          {showCorrectAnswer && (
             <div className="mt-6 p-4 bg-blue-50 border-l-4 border-blue-500 text-blue-800 rounded-md shadow-sm">
               <p className="font-semibold mb-2">正确答案:</p>
-              <p className="whitespace-pre-wrap text-lg">
-                {currentQuestion.answers.join('')} 
-              </p>
+              <p className="whitespace-pre-wrap text-lg">{currentQuestion.answers.join('')}</p>
             </div>
           )}
 
           <div className="text-center mt-6 flex justify-center gap-4">
-            <button 
-              onClick={checkAnswer} 
-              className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-full shadow-md hover:bg-blue-700 transition duration-200 ease-in-out" 
+            <button
+              onClick={checkAnswer}
+              className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-full shadow-md hover:bg-blue-700 transition duration-200 ease-in-out"
             >
               检查答案
             </button>
-            <button 
-              onClick={resetQuestionState} 
-              className="px-8 py-3 bg-yellow-500 text-white font-semibold rounded-full shadow-md hover:bg-yellow-600 transition duration-200 ease-in-out" 
+            <button
+              onClick={resetQuestionState}
+              className="px-8 py-3 bg-yellow-500 text-white font-semibold rounded-full shadow-md hover:bg-yellow-600 transition duration-200 ease-in-out"
             >
               重做
             </button>
@@ -333,7 +277,8 @@ function App() {
         </>
       );
     }
-    return null; 
+
+    return null;
   };
 
   return (
@@ -341,13 +286,6 @@ function App() {
       <div className="bg-white rounded-xl shadow-xl max-w-4xl w-full mx-auto border border-gray-200 p-6 md:p-10">
         {renderContent()}
       </div>
-      {/* 全局字体样式，确保 Inter 字体被应用，并包含中文字体回退 */}
-      <style>{`
-        body {
-          font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif,
-                       "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "STHeiti";
-        }
-      `}</style>
     </div>
   );
 }

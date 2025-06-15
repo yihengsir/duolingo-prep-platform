@@ -1,0 +1,123 @@
+/* src/App.css - 滚回版本2样式 */
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif,
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "STHeiti";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f3f4f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* 单个字符填空样式 */
+.char-input {
+  width: 20px;
+  height: 28px;
+  text-align: center;
+  border: 1px solid #d1d5db;
+  border-radius: 0.25rem;
+  margin: 0 2px;
+  padding: 2px;
+  font-weight: 500;
+  color: #1f2937;
+  background-color: #f9fafb;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.char-input:focus {
+  outline: none;
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.5);
+  background-color: #fff;
+}
+
+.char-input:disabled {
+  background-color: #e5e7eb;
+  cursor: not-allowed;
+}
+
+.char-input.correct {
+  border-color: #10b981;
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.char-input.incorrect {
+  border-color: #ef4444;
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+/* 基础按钮样式 */
+.button-base {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button-blue {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.button-blue:hover {
+  background-color: #2563eb;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+.button-blue:active {
+  background-color: #1d4ed8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transform: translateY(0);
+}
+
+.button-yellow {
+  background-color: #fcd34d;
+  color: #78350f;
+}
+
+.button-yellow:hover {
+  background-color: #fbbf24;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+.button-yellow:active {
+  background-color: #f59e0b;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transform: translateY(0);
+}
+
+/* 响应式优化 */
+@media (max-width: 768px) {
+  .button-base {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .char-input {
+    width: 18px;
+    height: 26px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .char-input {
+    width: 16px;
+    height: 24px;
+    font-size: 0.85rem;
+  }
+}
