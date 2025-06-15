@@ -1,3 +1,4 @@
+// src/App.jsx - 最终稳定版
 import { useState, useEffect, useRef, useCallback } from 'react';
 import './App.css';
 import questionsData from '../data/read_and_complete.json';
@@ -15,45 +16,47 @@ function App() {
   const [isCorrect, setIsCorrect] = useState(null);
   const [showCorrectAnswer, setShowCorrectAnswer] = useState(false);
   const [timeLeft, setTimeLeft] = useState(TIMER_DURATION);
+  const [allFilled, setAllFilled] = useState(false);
 
   const timerRef = useRef(null);
   const inputRefs = useRef([]);
   const currentQuestion = questionsData[currentQuestionIndex];
 
   const resetQuestionState = useCallback(() => {
-    const current = questionsData[currentQuestionIndex];
-    if (!current || !current.answers || !Array.isArray(current.answers)) return;
-
-    const init = current.answers.map(word => Array(word.length).fill(''));
+    const init = currentQuestion.answers.map(word => Array(word.length).fill(''));
     setInputValues(init);
-    inputRefs.current = current.answers.map(word => Array(word.length).fill(null));
-
     setFeedbackMessage('');
     setIsCorrect(null);
     setShowCorrectAnswer(false);
     setTimeLeft(TIMER_DURATION);
+    setAllFilled(false);
+    inputRefs.current = [];
 
     if (timerRef.current) clearInterval(timerRef.current);
     timerRef.current = setInterval(() => {
       setTimeLeft(prev => {
         if (prev <= 1) {
           clearInterval(timerRef.current);
-          setFeedbackMessage('时间到！请检查答案。');
-          setIsCorrect(false);
-          setShowCorrectAnswer(true);
+          setTimeLeft(0);
+          checkAnswer();
           return 0;
         }
         return prev - 1;
       });
     }, 1000);
-  }, [currentQuestionIndex]);
+  }, [currentQuestion]);
 
   useEffect(() => {
-    if (gameState === 'readAndComplete' && currentQuestion?.answers) {
+    if (gameState === 'readAndComplete') {
       resetQuestionState();
     }
     return () => clearInterval(timerRef.current);
   }, [gameState, currentQuestionIndex, resetQuestionState]);
+
+  useEffect(() => {
+    const filled = inputValues.every(word => word.every(char => char.trim() !== ''));
+    setAllFilled(filled);
+  }, [inputValues]);
 
   const handleCharChange = (e, wordIdx, charIdx) => {
     const val = e.target.value.slice(0, 1);
@@ -116,7 +119,6 @@ function App() {
   const renderBlanks = () => {
     const parts = currentQuestion.text.split('[BLANK]');
     const elements = [];
-
     parts.forEach((part, i) => {
       elements.push(<span key={`text-${i}`}>{part}</span>);
       if (i < currentQuestion.answers.length) {
@@ -150,7 +152,6 @@ function App() {
         );
       }
     });
-
     return <div className="flex flex-wrap gap-1 leading-relaxed justify-start items-baseline">{elements}</div>;
   };
 
@@ -213,7 +214,13 @@ function App() {
           )}
 
           <div className="text-center mt-6 flex justify-center gap-4">
-            <button onClick={checkAnswer} className="button-base button-blue">检查答案</button>
+            <button
+              onClick={checkAnswer}
+              className={`button-base ${allFilled && isCorrect === null && timeLeft > 0 ? 'button-blue' : 'button-disabled'}`}
+              disabled={!allFilled || isCorrect !== null || timeLeft === 0}
+            >
+              检查答案
+            </button>
             <button onClick={resetQuestionState} className="button-base button-yellow">重做</button>
           </div>
         </>
