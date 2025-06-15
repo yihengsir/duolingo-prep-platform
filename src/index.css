@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-50 p-8 m-0 font-sans;
+}
+
+.container {
+  @apply max-w-3xl mx-auto bg-white p-6 rounded-xl shadow;
+}
+
+h1 {
+  @apply text-2xl font-bold mb-6 text-center;
+}
+
+.text-box {
+  @apply text-base leading-relaxed flex flex-wrap gap-1;
+}
+
+.char-input {
+  @apply w-6 h-8 text-center text-base border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400;
+}
