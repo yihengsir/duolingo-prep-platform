@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import './App.css';
-import questionsData from '../data/read_and_complete.json'; // 👈 静态导入 JSON
+import questionsData from '../data/read_and_complete.json';
 
 const TIMER_DURATION = 180;
 const INVITATION_CODE = '130';
@@ -18,7 +18,6 @@ function App() {
 
   const timerRef = useRef(null);
   const inputRefs = useRef([]);
-
   const currentQuestion = questionsData[currentQuestionIndex];
 
   const resetQuestionState = useCallback(() => {
@@ -55,10 +54,7 @@ function App() {
         clearTimeout(timeoutId);
       };
     } else {
-      if (timerRef.current) {
-        clearInterval(timerRef.current);
-        timerRef.current = null;
-      }
+      if (timerRef.current) clearInterval(timerRef.current);
     }
   }, [currentQuestionIndex, gameState, resetQuestionState]);
 
@@ -103,24 +99,13 @@ function App() {
       (ans, i) => ans.toLowerCase() === (inputValues[i] || '').toLowerCase()
     );
     setIsCorrect(allCorrect);
-    setShowCorrectAnswer(!allCorrect);
+    setShowCorrectAnswer(true);
     setFeedbackMessage(allCorrect ? '所有填空都正确！' : '部分填空有误，请检查。');
   };
 
-  const formatTime = (s) =>
-    `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
-
-  const goToNext = () => {
-    if (currentQuestionIndex < questionsData.length - 1) {
-      setCurrentQuestionIndex(i => i + 1);
-    }
-  };
-
-  const goToPrev = () => {
-    if (currentQuestionIndex > 0) {
-      setCurrentQuestionIndex(i => i - 1);
-    }
-  };
+  const formatTime = (s) => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
+  const goToNext = () => currentQuestionIndex < questionsData.length - 1 && setCurrentQuestionIndex(i => i + 1);
+  const goToPrev = () => currentQuestionIndex > 0 && setCurrentQuestionIndex(i => i - 1);
 
   const handleInvitationCodeSubmit = () => {
     if (invitationCodeInput === INVITATION_CODE) {
@@ -142,7 +127,7 @@ function App() {
       );
 
       if (index < currentQuestion.answers.length) {
-        const showResult = isCorrect === true || timeLeft === 0;
+        const showResult = isCorrect !== null || timeLeft === 0;
         const inputChar = inputValues[blankIndex] || '';
         const isCorrectChar = currentQuestion.answers[blankIndex].toLowerCase() === inputChar.toLowerCase();
 
@@ -164,7 +149,7 @@ function App() {
             onChange={(e) => handleChange(e, blankIndex)}
             onKeyDown={(e) => handleKeyDown(e, blankIndex)}
             ref={(el) => { inputRefs.current[blankIndex] = el; }}
-            disabled={showResult}
+            disabled={showResult && isCorrect !== null}
           />
         );
         blankIndex++;
@@ -227,18 +212,14 @@ function App() {
               onClick={goToPrev}
               className="px-4 py-2 bg-gray-200 text-gray-700 rounded-full shadow-sm hover:bg-gray-300 transition duration-200 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
               disabled={currentQuestionIndex === 0}
-            >
-              上一题
-            </button>
+            >上一题</button>
           </div>
           <div className="absolute top-4 right-4">
             <button
               onClick={goToNext}
               className="px-4 py-2 bg-gray-200 text-gray-700 rounded-full shadow-sm hover:bg-gray-300 transition duration-200 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
               disabled={currentQuestionIndex === questionsData.length - 1}
-            >
-              下一题
-            </button>
+            >下一题</button>
           </div>
 
           <div className="text-center text-blue-600 text-xl font-bold mb-1">Duolingo DET Prep - 阅读并补全</div>
@@ -256,7 +237,7 @@ function App() {
           {showCorrectAnswer && (
             <div className="mt-6 p-4 bg-blue-50 border-l-4 border-blue-500 text-blue-800 rounded-md shadow-sm">
               <p className="font-semibold mb-2">正确答案:</p>
-              <p className="whitespace-pre-wrap text-lg">{currentQuestion.answers.join('')}</p>
+              <p className="whitespace-pre-wrap text-lg">{currentQuestion.text.replaceAll('[BLANK]', () => currentQuestion.answers.shift())}</p>
             </div>
           )}
 
@@ -264,15 +245,11 @@ function App() {
             <button
               onClick={checkAnswer}
               className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-full shadow-md hover:bg-blue-700 transition duration-200 ease-in-out"
-            >
-              检查答案
-            </button>
+            >检查答案</button>
             <button
               onClick={resetQuestionState}
               className="px-8 py-3 bg-yellow-500 text-white font-semibold rounded-full shadow-md hover:bg-yellow-600 transition duration-200 ease-in-out"
-            >
-              重做
-            </button>
+            >重做</button>
           </div>
         </>
       );
