@@ -1,4 +1,4 @@
-// src/App.jsx (Duolingo Prep - 最终修复：样式内联与数据加载 V5)
+// src/App.jsx (Duolingo Prep - 最终修复：404错误与样式 V6)
 import { useState, useEffect, useRef, useCallback } from 'react';
 
 const TIMER_DURATION = 180; // 计时器时长 (秒)
@@ -8,8 +8,8 @@ function App() {
   const [gameState, setGameState] = useState('welcome');
   const [invitationCodeInput, setInvitationCodeInput] = useState('');
   const [invitationCodeError, setInvitationCodeError] = useState('');
-  const [questionsData, setQuestionsData] = useState([]); // 存储加载的题目数据
-  const [dataLoadingError, setDataLoadingError] = useState(''); // 数据加载错误信息
+  const [questionsData, setQuestionsData] = useState([]); 
+  const [dataLoadingError, setDataLoadingError] = useState(''); 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
   const [inputValues, setInputValues] = useState([]);
@@ -24,29 +24,21 @@ function App() {
 
   const currentQuestion = questionsData[currentQuestionIndex]; 
 
-  // effect for loading questions data
   useEffect(() => {
     const loadQuestions = async () => {
       try {
+        // 关键：确保此路径与您实际的 JSON 文件位置匹配
+        // 如果 data 文件夹在项目根目录，这个路径是正确的。
         const response = await fetch('/data/read_and_complete.json');
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
-        // 尝试以多种编码解码，确保乱码问题解决
-        let text = await response.text();
-        try {
-          // 尝试解析为UTF-8
-          JSON.parse(text); 
-        } catch (e) {
-          // 如果UTF-8失败，尝试其他常见编码 (例如 GBK, Big5)
-          // 注意：浏览器原生fetch不支持指定编码，这里仅作示意或需要Node.js环境辅助
-          // 对于浏览器环境，最佳实践是确保JSON文件本身就是UTF-8编码
-          console.warn("UTF-8 parsing failed, trying alternative encoding methods are complex in browser fetch.");
-        }
-        setQuestionsData(JSON.parse(text));
+        const text = await response.text(); 
+        const data = JSON.parse(text); 
+        setQuestionsData(data);
       } catch (error) {
         console.error("Failed to load questions data:", error);
-        setDataLoadingError("加载题目数据失败，请检查文件或网络连接。可能文件编码不正确。");
+        setDataLoadingError("加载题目数据失败，请检查文件或网络连接。可能文件编码不正确或路径错误。");
       }
     };
 
@@ -234,9 +226,9 @@ function App() {
       return (
         <div className="text-center flex flex-col items-center">
           <img 
-            src="/unnamed.png" 
+            src="/unnamed.png" // 使用 public 目录的相对路径
             alt="logo" 
-            className="w-36 h-36 rounded-full mb-8 shadow-lg" // 保持圆角和阴影
+            className="w-36 h-36 rounded-full mb-8 shadow-lg" 
             loading="lazy" 
             onError={(e) => { e.target.src = "https://placehold.co/144x144/E0E0E0/333333?text=Logo+Missing"; }}
           />
@@ -345,7 +337,7 @@ function App() {
   };
 
   return (
-    <div className="relative flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
+    <div className="relative flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4 font-inter">
       <div className="bg-white rounded-xl shadow-xl max-w-4xl w-full mx-auto border border-gray-200 p-6 md:p-10">
         {renderContent()}
       </div>
