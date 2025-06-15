@@ -1,7 +1,6 @@
 /* src/index.css */
 
-/* 这是 Tailwind CSS 的指令。这些指令需要 PostCSS/Tailwind CLI 来处理。 */
-/* 不要直接在 React 组件中导入这个文件，它只作为 Tailwind 的输入文件。 */
+/* 必须添加这三行，它们是导入 Tailwind CSS 核心样式所必需的 */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

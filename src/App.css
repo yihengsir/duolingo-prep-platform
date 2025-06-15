@@ -1,141 +1,132 @@
-/* Base input styles */
-.char-input {
-  width: 24px;
-  height: 32px;
-  text-align: center;
-  font-size: 18px;
-  border: none;
-  border-bottom: 2px solid #ccc;
-  outline: none;
-  margin: 0 1px;
-  transition: border-color 0.2s ease-in-out;
+/* src/App.css - Custom styles for Duolingo DET Prep */
+
+/* Apply box-sizing globally for consistent layout behavior */
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
-.char-input:focus {
-  border-color: #2563eb; /* Tailwind's blue-600 */
+/* Basic body styles for background and font */
+body {
+  margin: 0;
+  /* font-family 会由 index.css 里的 Tailwind 基础样式控制 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f3f4f6; /* Light gray background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensure full viewport height */
 }
 
-/* Correct and incorrect states */
-.correct {
-  border-color: #16a34a; /* green-600 */
-  color: #16a34a;
-  font-weight: bold;
-}
-
-.incorrect {
-  border-color: #dc2626; /* red-600 */
-  color: #dc2626;
-}
-
-/* Button base styles */
+/* Base button styles */
 .button-base {
-  padding: 8px 20px;
-  font-size: 15px;
-  font-weight: 500;
-  border-radius: 9999px;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out, transform 0.1s ease;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 0.75rem 1.5rem; /* Padding for buttons */
+  border-radius: 0.5rem; /* Rounded corners */
+  font-weight: 600; /* Semi-bold text */
+  transition: all 0.2s ease-in-out; /* Smooth transitions for hover/focus */
+  cursor: pointer; /* Indicate clickable element */
+  display: inline-flex; /* Allow content to center */
+  align-items: center;
+  justify-content: center;
+  border: none; /* No default border */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-/* Button variants */
+/* Blue button style for primary actions */
 .button-blue {
-  background-color: #3b82f6;
-  color: white;
+  background-color: #3b82f6; /* Blue background */
+  color: white; /* White text */
 }
 
 .button-blue:hover {
-  background-color: #2563eb;
+  background-color: #2563eb; /* Darker blue on hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+  transform: translateY(-1px); /* Slight lift on hover */
 }
 
+.button-blue:active {
+  background-color: #1d4ed8; /* Even darker blue on active */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transform: translateY(0);
+}
+
+/* Yellow button style for secondary actions like "重做" (Redo) */
 .button-yellow {
-  background-color: #fef3c7;
-  border: 2px solid #fbbf24;
-  color: #b45309;
+  background-color: #fcd34d; /* Yellow background */
+  color: #78350f; /* Dark brown text for contrast */
 }
 
 .button-yellow:hover {
-  background-color: #fde68a;
+  background-color: #fbbf24; /* Darker yellow on hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
 }
 
-.button-green {
-  background-color: #ecfdf5;
-  border: 2px solid #10b981;
-  color: #065f46;
+.button-yellow:active {
+  background-color: #f59e0b; /* Even darker yellow on active */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transform: translateY(0);
 }
 
-.button-green:hover {
-  background-color: #d1fae5;
+/* Styles for the single character input blanks */
+.char-input {
+  width: 20px; /* Fixed width for single character */
+  height: 28px; /* Fixed height for consistency */
+  text-align: center; /* Center the character */
+  border: 1px solid #d1d5db; /* Light gray border */
+  border-radius: 0.25rem; /* Slightly rounded corners */
+  margin: 0 2px; /* Small margin between blanks and text */
+  padding: 2px; /* Small padding */
+  font-weight: 500; /* Medium font weight */
+  color: #1f2937; /* Dark text color */
+  background-color: #f9fafb; /* Off-white background */
+  transition: border-color 0.2s, background-color 0.2s; /* Smooth transitions */
 }
 
-/* Disabled button */
-.button-disabled {
-  background-color: #e5e7eb;
-  color: #9ca3af;
-  cursor: not-allowed;
+.char-input:focus {
+  outline: none; /* Remove default outline */
+  border-color: #60a5fa; /* Blue border on focus */
+  box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.5); /* Blue shadow on focus */
+  background-color: #fff; /* White background on focus */
 }
 
-/* Text wrapper for blank-filled paragraph */
-.text-wrapper {
-  text-align: left;
-  flex-wrap: wrap;
-  word-break: break-word;
-  line-height: 2;
+.char-input:disabled {
+  background-color: #e5e7eb; /* Lighter background when disabled */
+  cursor: not-allowed; /* Indicate not editable */
 }
 
-/* Answer display area */
-.answer-box {
-  background-color: #eff6ff;
-  border-left: 4px solid #3b82f6;
-  padding: 1rem;
-  margin-top: 1rem;
-  border-radius: 0.375rem;
-  color: #1e3a8a;
+/* Styles for correct input feedback */
+.char-input.correct {
+  border-color: #10b981; /* Green border for correct */
+  background-color: #d1fae5; /* Light green background for correct */
+  color: #065f46; /* Darker green text */
 }
 
-/* Centered header section */
-.header-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  margin-bottom: 1rem;
+/* Styles for incorrect input feedback */
+.char-input.incorrect {
+  border-color: #ef4444; /* Red border for incorrect */
+  background-color: #fee2e2; /* Light red background for incorrect */
+  color: #991b1b; /* Darker red text */
 }
 
-.header-section .timer {
-  position: absolute;
-  left: 0;
-  font-weight: 500;
-  color: #6b7280;
+/* Responsive adjustments for overall layout */
+@media (max-width: 768px) {
+  .button-base {
+    padding: 0.6rem 1.2rem; /* Slightly smaller padding on mobile */
+    font-size: 0.9rem; /* Slightly smaller font size */
+  }
+
+  .char-input {
+    width: 18px; /* Smaller width for single character on mobile */
+    height: 26px; /* Smaller height */
+    font-size: 0.9rem; /* Smaller font size for blanks */
+  }
 }
 
-.header-section .question-number {
-  position: absolute;
-  right: 0;
-  font-weight: 500;
-  color: #6b7280;
-}
-
-.header-section h1 {
-  text-align: center;
-  flex: 1;
-  font-size: 20px;
-  font-weight: bold;
-  color: #2563eb;
-}
-
-/* Welcome logo alignment fix */
-.welcome-logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 1.5rem;
-}
-
-.welcome-logo img {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-  display: block;
+@media (max-width: 480px) {
+  .char-input {
+    width: 16px; /* Even smaller width on very small screens */
+    height: 24px; /* Even smaller height */
+    font-size: 0.85rem; /* Even smaller font size for blanks */
+  }
 }
