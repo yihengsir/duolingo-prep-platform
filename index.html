@@ -5,9 +5,14 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Duolingo Prep with Fengfeng</title>
+    <!-- 关键改变：直接通过 CDN 引入 Tailwind CSS，绕过本地编译 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for Inter and Chinese fallbacks (optional, can be moved to App.jsx style if preferred) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
     <div id="root"></div>
+    <!-- main.jsx 会加载 React 应用 -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
