@@ -1,4 +1,3 @@
-// src/App.jsx - 最终版：保持所有页面与样式结构，只替换输入逻辑
 import { useState, useEffect, useRef, useCallback } from 'react';
 import './App.css';
 import questionsData from '../data/read_and_complete.json';
@@ -22,13 +21,17 @@ function App() {
   const currentQuestion = questionsData[currentQuestionIndex];
 
   const resetQuestionState = useCallback(() => {
-    const init = currentQuestion.answers.map(word => Array(word.length).fill(''));
+    const current = questionsData[currentQuestionIndex];
+    if (!current || !current.answers || !Array.isArray(current.answers)) return;
+
+    const init = current.answers.map(word => Array(word.length).fill(''));
     setInputValues(init);
+    inputRefs.current = current.answers.map(word => Array(word.length).fill(null));
+
     setFeedbackMessage('');
     setIsCorrect(null);
     setShowCorrectAnswer(false);
     setTimeLeft(TIMER_DURATION);
-    inputRefs.current = [];
 
     if (timerRef.current) clearInterval(timerRef.current);
     timerRef.current = setInterval(() => {
@@ -43,10 +46,10 @@ function App() {
         return prev - 1;
       });
     }, 1000);
-  }, [currentQuestion]);
+  }, [currentQuestionIndex]);
 
   useEffect(() => {
-    if (gameState === 'readAndComplete') {
+    if (gameState === 'readAndComplete' && currentQuestion?.answers) {
       resetQuestionState();
     }
     return () => clearInterval(timerRef.current);
@@ -113,6 +116,7 @@ function App() {
   const renderBlanks = () => {
     const parts = currentQuestion.text.split('[BLANK]');
     const elements = [];
+
     parts.forEach((part, i) => {
       elements.push(<span key={`text-${i}`}>{part}</span>);
       if (i < currentQuestion.answers.length) {
@@ -146,6 +150,7 @@ function App() {
         );
       }
     });
+
     return <div className="flex flex-wrap gap-1 leading-relaxed justify-start items-baseline">{elements}</div>;
   };
 
