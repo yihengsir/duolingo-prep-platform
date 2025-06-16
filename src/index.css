@@ -1,50 +1,65 @@
-/* src/index.css */
 @tailwind utilities;
 
 @layer utilities {
   .content-auto {
     content-visibility: auto;
   }
+  
+  /* 字符输入框 */
   .char-input {
-    @apply w-6 h-8 text-center border border-neutral-300 rounded px-1 font-medium text-neutral-800 bg-white transition-all;
+    @apply w-10 h-10 text-center border-2 rounded-md px-1 font-medium text-neutral-800 bg-white transition-all duration-200 
+           focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/30 shadow-sm;
   }
+  
   .char-input:focus {
-    @apply outline-none border-primary ring-2 ring-primary/50 bg-white transform -translate-y-0.5;
+    @apply transform -translate-y-0.5 shadow-md;
   }
+  
   .char-input.correct {
-    @apply border-success bg-success/10 text-success/90;
+    @apply border-success bg-success/10 text-success font-bold;
   }
+  
   .char-input.incorrect {
-    @apply border-danger bg-danger/10 text-danger/90;
+    @apply border-danger bg-danger/10 text-danger font-bold;
   }
+  
+  /* 按钮样式 */
   .button-base {
-    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-200 shadow-md cursor-pointer flex items-center justify-center border-0;
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-200 cursor-pointer flex items-center justify-center border-0;
   }
+  
   .button-blue {
-    @apply bg-primary text-white;
+    @apply bg-primary text-white hover:bg-primary/90 hover:shadow-lg hover:-translate-y-0.5 active:bg-primary/80 active:translate-y-0;
   }
-  .button-blue:hover {
-    @apply bg-primary/90 shadow-lg transform -translate-y-0.5;
-  }
-  .button-blue:active {
-    @apply bg-primary/80 shadow-sm transform translate-y-0;
-  }
+  
   .button-yellow {
-    @apply bg-secondary text-amber-800;
+    @apply bg-secondary text-amber-800 hover:bg-secondary/90 hover:shadow-lg hover:-translate-y-0.5 active:bg-secondary/80 active:translate-y-0;
   }
-  .button-yellow:hover {
-    @apply bg-secondary/90 shadow-lg transform -translate-y-0.5;
-  }
-  .button-yellow:active {
-    @apply bg-secondary/80 shadow-sm transform translate-y-0;
-  }
+  
   .button-green {
-    @apply bg-success text-white;
+    @apply bg-success text-white hover:bg-success/90 hover:shadow-lg hover:-translate-y-0.5 active:bg-success/80 active:translate-y-0;
   }
-  .button-green:hover {
-    @apply bg-success/90 shadow-lg transform -translate-y-0.5;
+  
+  .button-gray {
+    @apply bg-gray-300 text-gray-700 hover:bg-gray-400 disabled:opacity-50 disabled:cursor-not-allowed;
   }
-  .button-green:active {
-    @apply bg-success/80 shadow-sm transform translate-y-0;
+  
+  /* 阅读文本 */
+  .reading-text {
+    @apply leading-relaxed text-lg md:text-xl mb-6;
+  }
+  
+  /* 卡片效果 */
+  .card {
+    @apply bg-white rounded-xl shadow-custom p-6 md:p-8 border border-gray-200 transition-all duration-300 hover:shadow-custom-lg;
+  }
+  
+  /* 平滑过渡 */
+  .fade-in {
+    @apply transition-opacity duration-500 opacity-100;
+  }
+  
+  .fade-out {
+    @apply transition-opacity duration-500 opacity-0;
   }
 }
