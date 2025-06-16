@@ -38,12 +38,22 @@
     }
   </script>
   
-  <!-- 自定义工具类 -->
+  <!-- Tailwind指令 -->
   <style type="text/tailwindcss">
     @layer utilities {
       .content-auto {
         content-visibility: auto;
       }
+    }
+  </style>
+  
+  <!-- 自定义工具类 -->
+  <style type="text/tailwindcss">
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    
+    @tailwind utilities;
+    
+    @layer utilities {
       .char-input {
         @apply w-6 h-8 text-center border border-neutral-300 rounded px-1 font-medium text-neutral-800 bg-white transition-all;
       }
